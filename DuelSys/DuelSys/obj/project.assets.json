@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Stefan\\source\\repos\\synthesys2nd_stefanpopescu\\DuelSys\\DuelSys\\DuelSys.csproj",
+      "projectUniqueName": "C:\\Users\\Stefan\\Desktop\\STUDY\\Synthesis_New\\synthesys2nd_stefanpopescu\\DuelSys\\DuelSys\\DuelSys.csproj",
       "projectName": "DuelSys",
-      "projectPath": "C:\\Users\\Stefan\\source\\repos\\synthesys2nd_stefanpopescu\\DuelSys\\DuelSys\\DuelSys.csproj",
+      "projectPath": "C:\\Users\\Stefan\\Desktop\\STUDY\\Synthesis_New\\synthesys2nd_stefanpopescu\\DuelSys\\DuelSys\\DuelSys.csproj",
       "packagesPath": "C:\\Users\\Stefan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Stefan\\source\\repos\\synthesys2nd_stefanpopescu\\DuelSys\\DuelSys\\obj\\",
+      "outputPath": "C:\\Users\\Stefan\\Desktop\\STUDY\\Synthesis_New\\synthesys2nd_stefanpopescu\\DuelSys\\DuelSys\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Stefan\\AppData\\Roaming\\NuGet\\NuGet.Config",

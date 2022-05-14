@@ -8,6 +8,7 @@ namespace TestDuelSys
         [TestMethod]
         public void TestMethod1()
         {
+            
         }
     }
 }
