@@ -1,0 +1,75 @@
+<Project>
+  <Name>Synthesis_Diagram</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Untitled</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Tournament</Name>
+        <Access>Public</Access>
+        <Location left="366" top="180" />
+        <Size width="189" height="315" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public int id</Member>
+        <Member type="Field">private string sportType</Member>
+        <Member type="Field">private string description</Member>
+        <Member type="Field">private string startDate</Member>
+        <Member type="Field">private string endDate</Member>
+        <Member type="Field">private int minPlayers</Member>
+        <Member type="Field">private int maxPlayers</Member>
+        <Member type="Field">private string location</Member>
+        <Member type="Field">private string tournamentType</Member>
+        <Member type="Constructor">public Tournament()</Member>
+        <Member type="Method">public void NewMethod()</Member>
+        <Member type="Method">public void NewMethod()</Member>
+        <Member type="Method">public void NewMethod()</Member>
+        <Member type="Method">public void NewMethod()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Staff</Name>
+        <Access>Public</Access>
+        <Location left="617" top="192" />
+        <Size width="162" height="247" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public int id</Member>
+        <Member type="Field">private string firstName</Member>
+        <Member type="Field">private string lastName</Member>
+        <Member type="Field">private string birthday</Member>
+        <Member type="Field">private string gender</Member>
+        <Member type="Field">private string email</Member>
+        <Member type="Field">private int phone</Member>
+        <Member type="Field">private string username</Member>
+        <Member type="Field">private string password</Member>
+        <Member type="Constructor">public Staff()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Player</Name>
+        <Access>Public</Access>
+        <Location left="832" top="200" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public int id</Member>
+        <Member type="Field">private string firstName</Member>
+        <Member type="Field">private string lastName</Member>
+        <Member type="Field">private string email</Member>
+        <Member type="Field">private string username</Member>
+        <Member type="Field">private string password</Member>
+        <Member type="Constructor">public Player()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Match</Name>
+        <Access>Public</Access>
+        <Location left="133" top="180" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public int id</Member>
+        <Member type="Field">public int tournamentID</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+</Project>
