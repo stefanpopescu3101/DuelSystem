@@ -1,14 +1,14 @@
 <Project>
   <Name>Synthesis_Diagram</Name>
   <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
-    <Name>Untitled</Name>
+    <Name>DuelSys</Name>
     <Language>CSharp</Language>
     <Entities>
       <Entity type="Class">
         <Name>Tournament</Name>
         <Access>Public</Access>
-        <Location left="366" top="180" />
-        <Size width="189" height="315" />
+        <Location left="1052" top="166" />
+        <Size width="289" height="332" />
         <Collapsed>False</Collapsed>
         <Member type="Field">public int id</Member>
         <Member type="Field">private string sportType</Member>
@@ -19,36 +19,35 @@
         <Member type="Field">private int maxPlayers</Member>
         <Member type="Field">private string location</Member>
         <Member type="Field">private string tournamentType</Member>
-        <Member type="Constructor">public Tournament()</Member>
-        <Member type="Method">public void NewMethod()</Member>
-        <Member type="Method">public void NewMethod()</Member>
-        <Member type="Method">public void NewMethod()</Member>
-        <Member type="Method">public void NewMethod()</Member>
+        <Member type="Constructor">public Tournament(int id, string sportType, string description, string startDate, string endDate, int minPlayers, int maxPlayers, string location, string tournamentType)</Member>
+        <Member type="Constructor">public Tournament(string sportType, string description, string startDate, string endDate, int minPlayers, int maxPlayers, string location, string tournamentType)</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
         <Name>Staff</Name>
         <Access>Public</Access>
-        <Location left="617" top="192" />
-        <Size width="162" height="247" />
+        <Location left="1703" top="166" />
+        <Size width="304" height="332" />
         <Collapsed>False</Collapsed>
         <Member type="Field">public int id</Member>
         <Member type="Field">private string firstName</Member>
         <Member type="Field">private string lastName</Member>
-        <Member type="Field">private string birthday</Member>
-        <Member type="Field">private string gender</Member>
+        <Member type="Field">private int cnp</Member>
         <Member type="Field">private string email</Member>
         <Member type="Field">private int phone</Member>
+        <Member type="Field">private string gender</Member>
+        <Member type="Field">private bool admin</Member>
         <Member type="Field">private string username</Member>
         <Member type="Field">private string password</Member>
-        <Member type="Constructor">public Staff()</Member>
+        <Member type="Constructor">public Staff(int id, string firstName, string lastName, int cnp, string email, int phone, string gender, bool admin, string username, string password)</Member>
+        <Member type="Constructor">public Staff(string firstName, string lastName, int cnp, string email, int phone, string gender, bool admin, string username, string password)</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
         <Name>Player</Name>
         <Access>Public</Access>
-        <Location left="832" top="200" />
-        <Size width="162" height="216" />
+        <Location left="714" top="166" />
+        <Size width="270" height="332" />
         <Collapsed>False</Collapsed>
         <Member type="Field">public int id</Member>
         <Member type="Field">private string firstName</Member>
@@ -62,14 +61,203 @@
       <Entity type="Class">
         <Name>Match</Name>
         <Access>Public</Access>
-        <Location left="133" top="180" />
-        <Size width="162" height="216" />
+        <Location left="364" top="166" />
+        <Size width="270" height="332" />
         <Collapsed>False</Collapsed>
         <Member type="Field">public int id</Member>
         <Member type="Field">public int tournamentID</Member>
         <Modifier>None</Modifier>
       </Entity>
+      <Entity type="Class">
+        <Name>TournamentManager</Name>
+        <Access>Public</Access>
+        <Location left="1052" top="623" />
+        <Size width="289" height="265" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private List&lt;Tournament&gt; tournaments</Member>
+        <Member type="Field">private ITournamentData mediator</Member>
+        <Member type="Constructor">public TournamentManager(ITournamentData src)</Member>
+        <Member type="Method">public bool AddTournament(Tournament tournament)</Member>
+        <Member type="Method">public bool RemoveTournament(Tournament tournament)</Member>
+        <Member type="Method">public Tournament[] GetAllTournaments()</Member>
+        <Member type="Method">public List&lt;Tournament&gt; GetTournaments()</Member>
+        <Member type="Method">public Tournament GetTournament(int id)</Member>
+        <Member type="Method">public void UpdateInfo(Tournament tournament, string sportType, string description, string startDate, string endDate, int minPlayers, int maxPlayers, string location)</Member>
+        <Member type="Method">public List&lt;Tournament&gt; SearchTournaments(string item)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>StaffManager</Name>
+        <Access>Public</Access>
+        <Location left="1703" top="623" />
+        <Size width="304" height="265" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private List&lt;Staff&gt; staffs</Member>
+        <Member type="Field">private IStaffData mediator</Member>
+        <Member type="Constructor">public StaffManager(IStaffData src)</Member>
+        <Member type="Method">public bool AddStaff(Staff staff)</Member>
+        <Member type="Method">public bool RemoveStaff(Staff staff)</Member>
+        <Member type="Method">public Staff CheckCredentials(string username, string password)</Member>
+        <Member type="Method">public Staff[] GetAllStaffs()</Member>
+        <Member type="Method">public List&lt;Staff&gt; GetStaffs()</Member>
+        <Member type="Method">public Staff GetStaff(int id)</Member>
+        <Member type="Method">public void UpdateInfo(Staff staff, string firstName, string lastName, int cnp, string email, int phone, string gender, string username, string password)</Member>
+        <Member type="Method">public List&lt;Staff&gt; SearchStaffs(string item)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TournamentMediator</Name>
+        <Access>Public</Access>
+        <Location left="894" top="1248" />
+        <Size width="240" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private DataAccess dataAccess</Member>
+        <Member type="Constructor">public TournamentMediator()</Member>
+        <Member type="Method">public List&lt;Tournament&gt; GetTournaments()</Member>
+        <Member type="Method">public bool UpdateInfo(Tournament tournament)</Member>
+        <Member type="Method">public bool AddTournament(Tournament tournament)</Member>
+        <Member type="Method">public bool RemoveTournament(Tournament tournament)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>StaffMediator</Name>
+        <Access>Public</Access>
+        <Location left="1939" top="1248" />
+        <Size width="240" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private DataAccess dataAccess</Member>
+        <Member type="Constructor">public StaffMediator()</Member>
+        <Member type="Method">public List&lt;Staff&gt; GetStaffs()</Member>
+        <Member type="Method">public bool UpdateInfo(Staff staff)</Member>
+        <Member type="Method">public bool AddStaff(Staff staff)</Member>
+        <Member type="Method">public bool RemoveStaff(Staff staff)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Interface">
+        <Name>IStaffData</Name>
+        <Access>Public</Access>
+        <Location left="1703" top="976" />
+        <Size width="304" height="157" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">bool AddStaff(Staff staff)</Member>
+        <Member type="Method">bool RemoveStaff(Staff staff)</Member>
+        <Member type="Method">List&lt;Staff&gt; GetStaffs()</Member>
+        <Member type="Method">bool UpdateInfo(Staff staff)</Member>
+      </Entity>
+      <Entity type="Interface">
+        <Name>ITournamentData</Name>
+        <Access>Public</Access>
+        <Location left="1052" top="976" />
+        <Size width="289" height="157" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">bool AddTournament(Tournament tournament)</Member>
+        <Member type="Method">bool RemoveTournament(Tournament tournament)</Member>
+        <Member type="Method">List&lt;Tournament&gt; GetTournaments()</Member>
+        <Member type="Method">bool UpdateInfo(Tournament tournament)</Member>
+      </Entity>
+      <Entity type="Class">
+        <Name>FakeStaffData</Name>
+        <Access>Public</Access>
+        <Location left="1551" top="1248" />
+        <Size width="240" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">List&lt;Staff&gt; staffs</Member>
+        <Member type="Constructor">public FakeStaffData()</Member>
+        <Member type="Method">public bool AddStaff(Staff staff)</Member>
+        <Member type="Method">public List&lt;Staff&gt; GetStaffs()</Member>
+        <Member type="Method">public bool RemoveStaff(Staff staff)</Member>
+        <Member type="Method">public bool UpdateInfo(Staff staff)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>FakeTournamentData</Name>
+        <Access>Public</Access>
+        <Location left="1256" top="1248" />
+        <Size width="240" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">List&lt;Tournament&gt; tournaments</Member>
+        <Member type="Method">public bool AddTournament(Tournament tournament)</Member>
+        <Member type="Method">public List&lt;Tournament&gt; GetTournaments()</Member>
+        <Member type="Method">public bool RemoveTournament(Tournament tournament)</Member>
+        <Member type="Method">public bool UpdateInfo(Tournament tournament)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DataAccess</Name>
+        <Access>Public</Access>
+        <Location left="1353" top="1592" />
+        <Size width="318" height="247" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">protected MySqlConnection connection</Member>
+        <Member type="Field">protected MySqlCommand command</Member>
+        <Member type="Field">protected MySqlDataReader dataReader</Member>
+        <Member type="Field">protected string query = ""</Member>
+        <Member type="Constructor">public DataAccess()</Member>
+        <Member type="Method">public void AddWithValue(string parameterName, object value)</Member>
+        <Member type="Method">public void NonQueryEx()</Member>
+        <Member type="Method">public void Close()</Member>
+        <Member type="Method">public bool ConnOpen()</Member>
+        <Member type="Method">public void SqlQuery(string queryText)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
     </Entities>
-    <Relationships />
+    <Relationships>
+      <Relationship type="Association" first="4" second="0">
+        <Label>-tournaments</Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <EndMultiplicity>0..*</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="5" second="1">
+        <Label>-staffs</Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <EndMultiplicity>0..*</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="4" second="9">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="5" second="8">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Realization" first="6" second="9">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="11" second="9">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="10" second="8">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="7" second="8">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="7" second="12">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="6" second="12">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+    </Relationships>
   </ProjectItem>
 </Project>
