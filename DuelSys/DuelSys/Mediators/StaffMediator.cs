@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DuelSys.Mediators
 {
-    class StaffMediator
+    public class StaffMediator
     {
     }
 }
