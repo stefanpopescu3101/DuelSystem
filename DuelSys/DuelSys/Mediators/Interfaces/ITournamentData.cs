@@ -7,9 +7,9 @@ namespace DuelSys.Mediators
 {
     public interface ITournamentData
     {
-        void AddTournament(Tournament tournament);
-        void RemoveTournament(Tournament tournament);
+        bool AddTournament(Tournament tournament);
+        bool RemoveTournament(Tournament tournament);
         List<Tournament> GetTournaments();
-        void UpdateInfo(Tournament tournament);
+        bool UpdateInfo(Tournament tournament);
     }
 }

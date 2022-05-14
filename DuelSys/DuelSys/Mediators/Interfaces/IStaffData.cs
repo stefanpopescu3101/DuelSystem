@@ -7,9 +7,9 @@ namespace DuelSys.Mediators
 {
     public interface IStaffData
     {
-        void AddStaff(Staff staff);
-        void RemoveStaff(Staff staff);
+        bool AddStaff(Staff staff);
+        bool RemoveStaff(Staff staff);
         List<Staff> GetStaffs();
-        void UpdateInfo(Staff staff);
+        bool UpdateInfo(Staff staff);
     }
 }
