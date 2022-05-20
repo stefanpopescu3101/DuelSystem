@@ -58,7 +58,7 @@ namespace DuelSys.Mediators
             {
                 try
                 {
-                    query = "UPDATE staff SET FirstName=@FirstName, LastName=@LastName, CNP=@CNP,  Email=@Email, Phone=@Phone, Gender=@Gender, Username=@Username, Password=@Password WHERE Id=@ID";
+                    query = "UPDATE staff SET FirstName=@FirstName, LastName=@LastName, CNP=@CNP,  Email=@Email, Phone=@Phone, Gender=@Gender, Username=@Username WHERE Id=@ID";
 
                     SqlQuery(query);
 
@@ -70,7 +70,7 @@ namespace DuelSys.Mediators
                     AddWithValue("@Phone", staff.Phone);
                     AddWithValue("@Gender", staff.Gender);
                     AddWithValue("@Username", staff.Username);
-                    AddWithValue("@Password", staff.Password);
+                    
 
                     NonQueryEx();
 

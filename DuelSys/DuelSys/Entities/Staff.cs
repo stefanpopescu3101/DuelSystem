@@ -107,7 +107,7 @@ namespace DuelSys.Entities
             this.password = password;
         }
 
-        public void UpdateInfo(string firstName, string lastName, int cnp, string email, int phone, string gender, string username, string password)
+        public void UpdateInfo(string firstName, string lastName, int cnp, string email, int phone, string gender, string username)
         {
             
             this.firstName = firstName;
@@ -117,7 +117,7 @@ namespace DuelSys.Entities
             this.phone = phone;
             this.gender = gender;
             this.username = username;
-            this.password = password;
+           
         }
     }
 }

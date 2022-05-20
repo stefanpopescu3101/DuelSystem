@@ -88,9 +88,9 @@ namespace DuelSys.Managers
             return null;
         }
 
-        public void UpdateInfo(Staff staff, string firstName, string lastName, int cnp, string email, int phone, string gender, string username, string password)
+        public void UpdateInfo(Staff staff, string firstName, string lastName, int cnp, string email, int phone, string gender, string username)
         {
-            staff.UpdateInfo(firstName, lastName, cnp, email, phone, gender, username, password);
+            staff.UpdateInfo(firstName, lastName, cnp, email, phone, gender, username);
             mediator.UpdateInfo(staff);
         }
 

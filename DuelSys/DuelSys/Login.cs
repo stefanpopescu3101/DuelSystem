@@ -1,4 +1,7 @@
-﻿using System;
+﻿using DuelSys.Entities;
+using DuelSys.Managers;
+using DuelSys.Mediators;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,10 +15,37 @@ namespace DuelSys
 {
     public partial class fmLogIn : Form
     {
+        private StaffManager staffManager;
         public fmLogIn()
         {
             InitializeComponent();
+
+            this.staffManager = new StaffManager(new StaffMediator());
         }
 
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            if (tbUsername.Text != "" && tbPassword.Text != "")
+            {
+                if (staffManager.CheckCredentials(tbUsername.Text, Hasher.ComputeSha256Hash(tbPassword.Text)) != null)
+                {
+
+                    Staff staff = staffManager.CheckCredentials(tbUsername.Text, Hasher.ComputeSha256Hash(tbPassword.Text));
+
+                    fmManagement gf = new fmManagement(staff.FirstName);
+                    this.Hide();
+                    gf.Show();
+
+                }
+                else
+                {
+                    MessageBox.Show("These credentials do not exist");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please fill in asll the required fields!");
+            }
+        }
     }
 }

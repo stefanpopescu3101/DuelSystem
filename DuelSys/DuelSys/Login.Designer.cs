@@ -46,6 +46,7 @@ namespace DuelSys
             // 
             this.tbPassword.Location = new System.Drawing.Point(57, 161);
             this.tbPassword.Name = "tbPassword";
+            this.tbPassword.PasswordChar = '*';
             this.tbPassword.Size = new System.Drawing.Size(141, 23);
             this.tbPassword.TabIndex = 1;
             // 
@@ -57,6 +58,7 @@ namespace DuelSys
             this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "Log in";
             this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // label1
             // 
