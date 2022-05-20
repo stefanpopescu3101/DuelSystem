@@ -102,3 +102,12 @@ C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\T
 C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\TestDuelSys\obj\Debug\netcoreapp3.1\TestDuelSys.dll
 C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\TestDuelSys\obj\Debug\netcoreapp3.1\TestDuelSys.pdb
 C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\TestDuelSys\obj\Debug\netcoreapp3.1\TestDuelSys.genruntimeconfig.cache
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\TestDuelSys\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\TestDuelSys\bin\Debug\netcoreapp3.1\Google.Protobuf.dll
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\TestDuelSys\bin\Debug\netcoreapp3.1\K4os.Compression.LZ4.dll
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\TestDuelSys\bin\Debug\netcoreapp3.1\K4os.Compression.LZ4.Streams.dll
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\TestDuelSys\bin\Debug\netcoreapp3.1\K4os.Hash.xxHash.dll
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\TestDuelSys\bin\Debug\netcoreapp3.1\MySql.Data.dll
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\TestDuelSys\bin\Debug\netcoreapp3.1\Ubiety.Dns.Core.dll
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\TestDuelSys\bin\Debug\netcoreapp3.1\ZstdNet.dll
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\TestDuelSys\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
