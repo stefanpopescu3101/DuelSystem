@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DuelSys
+namespace DuelSys.GeneralForms
 {
     public partial class fmLogIn : Form
     {

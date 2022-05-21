@@ -5,7 +5,6 @@ C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\D
 C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSys\bin\Debug\netcoreapp3.1\DuelSys.dll
 C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSys\bin\Debug\netcoreapp3.1\DuelSys.pdb
 C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSys\obj\Debug\netcoreapp3.1\DuelSys.csproj.AssemblyReference.cache
-C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSys\obj\Debug\netcoreapp3.1\DuelSys.fmLogIn.resources
 C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSys\obj\Debug\netcoreapp3.1\DuelSys.csproj.GenerateResource.cache
 C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSys\obj\Debug\netcoreapp3.1\DuelSys.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSys\obj\Debug\netcoreapp3.1\DuelSys.AssemblyInfoInputs.cache
@@ -24,10 +23,11 @@ C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\D
 C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSys\bin\Debug\netcoreapp3.1\ZstdNet.dll
 C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSys\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSys\obj\Debug\netcoreapp3.1\DuelSys.csproj.CopyComplete
-C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSys\obj\Debug\netcoreapp3.1\DuelSys.fmAddStaff.resources
-C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSys\obj\Debug\netcoreapp3.1\DuelSys.fmManagement.resources
-C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSys\obj\Debug\netcoreapp3.1\DuelSys.fmUpdateStaff.resources
 C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSys\bin\Debug\netcoreapp3.1\DuelSysClassLibrary.dll
 C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSys\bin\Debug\netcoreapp3.1\DuelSysClassLibrary.pdb
-C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSys\obj\Debug\netcoreapp3.1\DuelSys.fmAddTournament.resources
-C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSys\obj\Debug\netcoreapp3.1\DuelSys.fmUpdateTournament.resources
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSys\obj\Debug\netcoreapp3.1\DuelSys.GeneralForms.fmLogIn.resources
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSys\obj\Debug\netcoreapp3.1\DuelSys.GeneralForms.fmManagement.resources
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSys\obj\Debug\netcoreapp3.1\DuelSys.StaffForms.fmAddStaff.resources
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSys\obj\Debug\netcoreapp3.1\DuelSys.StaffForms.fmUpdateStaff.resources
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSys\obj\Debug\netcoreapp3.1\DuelSys.TournamentForms.fmAddTournament.resources
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSys\obj\Debug\netcoreapp3.1\DuelSys.TournamentForms.fmUpdateTournament.resources

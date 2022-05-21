@@ -1,4 +1,6 @@
-﻿
+﻿using DuelSys.GeneralForms;
+using DuelSys.StaffForms;
+using DuelSys.TournamentForms;
 using DuelSysClassLibrary.Entities;
 using DuelSysClassLibrary.Managers;
 using DuelSysClassLibrary.Mediators;
@@ -11,7 +13,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace DuelSys
+namespace DuelSys.StaffForms
 {
     public partial class fmAddStaff : Form
     {

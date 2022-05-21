@@ -1,5 +1,5 @@
 ﻿
-namespace DuelSys
+namespace DuelSys.GeneralForms
 {
     partial class fmLogIn
     {

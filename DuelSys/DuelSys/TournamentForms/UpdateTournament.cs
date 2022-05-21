@@ -1,6 +1,9 @@
 ﻿using DuelSysClassLibrary.Entities;
 using DuelSysClassLibrary.Managers;
 using DuelSysClassLibrary.Mediators;
+using DuelSys.GeneralForms;
+using DuelSys.StaffForms;
+using DuelSys.TournamentForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,7 +13,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace DuelSys
+namespace DuelSys.TournamentForms
 {
     public partial class fmUpdateTournament : Form
     {

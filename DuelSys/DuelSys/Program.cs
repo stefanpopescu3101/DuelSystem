@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DuelSys.GeneralForms;
+using DuelSys.StaffForms;
+using DuelSys.TournamentForms;
 
 namespace DuelSys
 {

@@ -1,5 +1,5 @@
 ﻿
-namespace DuelSys
+namespace DuelSys.TournamentForms
 {
     partial class fmUpdateTournament
     {

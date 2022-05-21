@@ -88,7 +88,7 @@ namespace TestDuelSys
 
 
             //act
-            staffManager.UpdateInfo(staff, "Seann", "Paul", 123456789, "sean.paul@gmail.com", 0734567859, "Male", "username1", "password1");
+            staffManager.UpdateInfo(staff, "Seann", "Paul", 123456789, "sean.paul@gmail.com", 0734567859, "Male", "username1");
 
             //assert
             Assert.AreEqual(staff.FirstName, "Seann");
