@@ -1,5 +1,5 @@
 ﻿
-namespace DuelSys.GeneralForms
+namespace DuelSysApp.GeneralForms
 {
     partial class fmManagement
     {

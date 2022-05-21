@@ -1909,7 +1909,7 @@
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
       },
-      "DuelSys/1.0.0": {
+      "DuelSysApp/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
@@ -1917,10 +1917,10 @@
           "MySql.Data": "8.0.29"
         },
         "compile": {
-          "bin/placeholder/DuelSys.dll": {}
+          "bin/placeholder/DuelSysApp.dll": {}
         },
         "runtime": {
-          "bin/placeholder/DuelSys.dll": {}
+          "bin/placeholder/DuelSysApp.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.WindowsDesktop.App.WindowsForms"
@@ -6923,10 +6923,10 @@
         "system.xml.xdocument.nuspec"
       ]
     },
-    "DuelSys/1.0.0": {
+    "DuelSysApp/1.0.0": {
       "type": "project",
-      "path": "../DuelSys/DuelSys.csproj",
-      "msbuildProject": "../DuelSys/DuelSys.csproj"
+      "path": "../DuelSys/DuelSysApp.csproj",
+      "msbuildProject": "../DuelSys/DuelSysApp.csproj"
     },
     "DuelSysClassLibrary/1.0.0": {
       "type": "project",
@@ -6936,7 +6936,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "DuelSys >= 1.0.0",
+      "DuelSysApp >= 1.0.0",
       "MSTest.TestAdapter >= 2.2.3",
       "MSTest.TestFramework >= 2.2.3",
       "Microsoft.NET.Test.Sdk >= 16.9.4",
@@ -6970,8 +6970,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\Stefan\\Desktop\\STUDY\\Synthesis_New\\synthesys2nd_stefanpopescu\\DuelSys\\DuelSys\\DuelSys.csproj": {
-              "projectPath": "C:\\Users\\Stefan\\Desktop\\STUDY\\Synthesis_New\\synthesys2nd_stefanpopescu\\DuelSys\\DuelSys\\DuelSys.csproj"
+            "C:\\Users\\Stefan\\Desktop\\STUDY\\Synthesis_New\\synthesys2nd_stefanpopescu\\DuelSys\\DuelSys\\DuelSysApp.csproj": {
+              "projectPath": "C:\\Users\\Stefan\\Desktop\\STUDY\\Synthesis_New\\synthesys2nd_stefanpopescu\\DuelSys\\DuelSys\\DuelSysApp.csproj"
             }
           }
         }

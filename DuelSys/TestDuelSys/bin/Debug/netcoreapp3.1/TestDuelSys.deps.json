@@ -1200,10 +1200,19 @@
       },
       "DuelSys/1.0.0": {
         "dependencies": {
+          "DuelSysClassLibrary": "1.0.0",
           "MySql.Data": "8.0.29"
         },
         "runtime": {
           "DuelSys.dll": {}
+        }
+      },
+      "DuelSysClassLibrary/1.0.0": {
+        "dependencies": {
+          "MySql.Data": "8.0.29"
+        },
+        "runtime": {
+          "DuelSysClassLibrary.dll": {}
         }
       }
     }
@@ -1950,6 +1959,11 @@
       "hashPath": "system.xml.xdocument.4.3.0.nupkg.sha512"
     },
     "DuelSys/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DuelSysClassLibrary/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

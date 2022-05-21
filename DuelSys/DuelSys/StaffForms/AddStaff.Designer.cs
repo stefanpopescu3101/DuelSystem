@@ -1,5 +1,5 @@
 ﻿
-namespace DuelSys.StaffForms
+namespace DuelSysApp.StaffForms
 {
     partial class fmAddStaff
     {

@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DuelSys\DuelSys.csproj" />
+    <ProjectReference Include="..\DuelSys\DuelSysApp.csproj" />
   </ItemGroup>
 
 </Project>

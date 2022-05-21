@@ -111,3 +111,5 @@ C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\T
 C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\TestDuelSys\bin\Debug\netcoreapp3.1\Ubiety.Dns.Core.dll
 C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\TestDuelSys\bin\Debug\netcoreapp3.1\ZstdNet.dll
 C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\TestDuelSys\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\TestDuelSys\bin\Debug\netcoreapp3.1\DuelSysClassLibrary.dll
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\TestDuelSys\bin\Debug\netcoreapp3.1\DuelSysClassLibrary.pdb
