@@ -32,9 +32,19 @@ namespace DuelSys
 
                     Staff staff = staffManager.CheckCredentials(tbUsername.Text, Hasher.ComputeSha256Hash(tbPassword.Text));
 
-                    fmManagement gf = new fmManagement(staff.FirstName);
-                    this.Hide();
-                    gf.Show();
+                    if(staff.Admin==false)
+                    {
+                        fmManagement gf = new fmManagement(staff.FirstName, false);
+                        this.Hide();
+                        gf.Show();
+                    }
+                    else
+                    {
+                        fmManagement gf = new fmManagement(staff.FirstName, true);
+                        this.Hide();
+                        gf.Show();
+                    }
+                    
 
                 }
                 else

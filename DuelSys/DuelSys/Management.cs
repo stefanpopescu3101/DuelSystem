@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
@@ -18,7 +19,9 @@ namespace DuelSys
         private TournamentManager tournamentManager;
 
         public string staffName;
-        public fmManagement(string staffName)
+
+        public bool admin;
+        public fmManagement(string staffName, bool admin)
         {
             InitializeComponent();
 
@@ -28,11 +31,26 @@ namespace DuelSys
 
             this.staffName = staffName;
 
+            this.admin = admin;
+
             UpdateGUI();
         }
 
         public void UpdateGUI()
         {
+            if (admin == false)
+            {
+                btnAddStaff.Enabled = false;
+                btnUpdateStaff.Enabled = false;
+                btnDeleteStaff.Enabled = false;
+            }
+            else
+            {
+                btnAddStaff.Enabled = true;
+                btnUpdateStaff.Enabled = true;
+                btnDeleteStaff.Enabled = true;
+            }
+
             lbWelcome.Text = staffName + "!";
 
             dtgvStaff.DataSource = staffManager.GetAllStaffs();
@@ -119,6 +137,20 @@ namespace DuelSys
             {
                 MessageBox.Show("Select a tournament first!");
             }
+        }
+
+        private void btnLogOutStaff_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            fmLogIn a = new fmLogIn();
+            a.Show();
+        }
+
+        private void btnLogOutTournament_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            fmLogIn a = new fmLogIn();
+            a.Show();
         }
     }
 }

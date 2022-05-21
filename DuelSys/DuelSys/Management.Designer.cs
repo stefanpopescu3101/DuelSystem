@@ -44,6 +44,8 @@ namespace DuelSys
             this.btnUpdateTournament = new System.Windows.Forms.Button();
             this.btnAddTournament = new System.Windows.Forms.Button();
             this.dtgvTournament = new System.Windows.Forms.DataGridView();
+            this.btnLogOutStaff = new System.Windows.Forms.Button();
+            this.btnLogOutTournament = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -65,6 +67,7 @@ namespace DuelSys
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btnLogOutStaff);
             this.tabPage1.Controls.Add(this.lbWelcome);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.groupBox1);
@@ -152,6 +155,7 @@ namespace DuelSys
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.btnLogOutTournament);
             this.tabPage2.Controls.Add(this.groupBox2);
             this.tabPage2.Controls.Add(this.dtgvTournament);
             this.tabPage2.Location = new System.Drawing.Point(4, 24);
@@ -214,6 +218,26 @@ namespace DuelSys
             this.dtgvTournament.Size = new System.Drawing.Size(487, 247);
             this.dtgvTournament.TabIndex = 1;
             // 
+            // btnLogOutStaff
+            // 
+            this.btnLogOutStaff.Location = new System.Drawing.Point(682, 365);
+            this.btnLogOutStaff.Name = "btnLogOutStaff";
+            this.btnLogOutStaff.Size = new System.Drawing.Size(86, 33);
+            this.btnLogOutStaff.TabIndex = 6;
+            this.btnLogOutStaff.Text = "Log Out";
+            this.btnLogOutStaff.UseVisualStyleBackColor = true;
+            this.btnLogOutStaff.Click += new System.EventHandler(this.btnLogOutStaff_Click);
+            // 
+            // btnLogOutTournament
+            // 
+            this.btnLogOutTournament.Location = new System.Drawing.Point(682, 365);
+            this.btnLogOutTournament.Name = "btnLogOutTournament";
+            this.btnLogOutTournament.Size = new System.Drawing.Size(86, 33);
+            this.btnLogOutTournament.TabIndex = 7;
+            this.btnLogOutTournament.Text = "Log Out";
+            this.btnLogOutTournament.UseVisualStyleBackColor = true;
+            this.btnLogOutTournament.Click += new System.EventHandler(this.btnLogOutTournament_Click);
+            // 
             // fmManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -251,5 +275,7 @@ namespace DuelSys
         private System.Windows.Forms.DataGridView dtgvTournament;
         private System.Windows.Forms.Label lbWelcome;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnLogOutStaff;
+        private System.Windows.Forms.Button btnLogOutTournament;
     }
 }
