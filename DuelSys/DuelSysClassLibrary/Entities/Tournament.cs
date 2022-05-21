@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DuelSys.Entities
+namespace DuelSysClassLibrary.Entities
 {
     public class Tournament
     {

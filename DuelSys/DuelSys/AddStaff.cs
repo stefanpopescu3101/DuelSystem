@@ -1,7 +1,7 @@
 ﻿
-using DuelSys.Entities;
-using DuelSys.Managers;
-using DuelSys.Mediators;
+using DuelSysClassLibrary.Entities;
+using DuelSysClassLibrary.Managers;
+using DuelSysClassLibrary.Mediators;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

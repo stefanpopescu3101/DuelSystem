@@ -1,9 +1,9 @@
-﻿using DuelSys.Entities;
+﻿using DuelSysClassLibrary.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DuelSys.Mediators.FakeData
+namespace DuelSysClassLibrary.Mediators.FakeData
 {
     public class FakeStaffData : IStaffData
     {

@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 using System.Data;
 using MySql.Data.MySqlClient;
 
-namespace DuelSys.Mediators
+namespace DuelSysClassLibrary.Mediators
 {
     public class DataAccess
     {

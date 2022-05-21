@@ -1,10 +1,10 @@
-﻿using DuelSys.Entities;
+﻿using DuelSysClassLibrary.Entities;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DuelSys.Mediators
+namespace DuelSysClassLibrary.Mediators
 {
     public class StaffMediator : DataAccess, IStaffData
     {

@@ -1,10 +1,10 @@
-﻿using DuelSys.Entities;
-using DuelSys.Mediators;
+﻿using DuelSysClassLibrary.Entities;
+using DuelSysClassLibrary.Mediators;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DuelSys.Managers
+namespace DuelSysClassLibrary.Managers
 {
     public class StaffManager
     {
