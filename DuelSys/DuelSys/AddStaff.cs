@@ -1,4 +1,5 @@
-﻿using DuelSys.Entities;
+﻿
+using DuelSys.Entities;
 using DuelSys.Managers;
 using DuelSys.Mediators;
 using System;

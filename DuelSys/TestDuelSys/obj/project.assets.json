@@ -1913,6 +1913,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
+          "DuelSysClassLibrary": "1.0.0",
           "MySql.Data": "8.0.29"
         },
         "compile": {
@@ -1924,6 +1925,19 @@
         "frameworkReferences": [
           "Microsoft.WindowsDesktop.App.WindowsForms"
         ]
+      },
+      "DuelSysClassLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "MySql.Data": "8.0.29"
+        },
+        "compile": {
+          "bin/placeholder/DuelSysClassLibrary.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DuelSysClassLibrary.dll": {}
+        }
       }
     }
   },
@@ -6913,6 +6927,11 @@
       "type": "project",
       "path": "../DuelSys/DuelSys.csproj",
       "msbuildProject": "../DuelSys/DuelSys.csproj"
+    },
+    "DuelSysClassLibrary/1.0.0": {
+      "type": "project",
+      "path": "../DuelSysClassLibrary/DuelSysClassLibrary.csproj",
+      "msbuildProject": "../DuelSysClassLibrary/DuelSysClassLibrary.csproj"
     }
   },
   "projectFileDependencyGroups": {

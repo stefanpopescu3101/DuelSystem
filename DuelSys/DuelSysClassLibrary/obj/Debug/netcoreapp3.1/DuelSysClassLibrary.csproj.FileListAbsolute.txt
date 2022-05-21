@@ -1,0 +1,10 @@
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysClassLibrary\obj\Debug\netcoreapp3.1\DuelSysClassLibrary.csproj.AssemblyReference.cache
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysClassLibrary\obj\Debug\netcoreapp3.1\DuelSysClassLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysClassLibrary\obj\Debug\netcoreapp3.1\DuelSysClassLibrary.AssemblyInfoInputs.cache
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysClassLibrary\obj\Debug\netcoreapp3.1\DuelSysClassLibrary.AssemblyInfo.cs
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysClassLibrary\obj\Debug\netcoreapp3.1\DuelSysClassLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysClassLibrary\bin\Debug\netcoreapp3.1\DuelSysClassLibrary.deps.json
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysClassLibrary\bin\Debug\netcoreapp3.1\DuelSysClassLibrary.dll
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysClassLibrary\bin\Debug\netcoreapp3.1\DuelSysClassLibrary.pdb
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysClassLibrary\obj\Debug\netcoreapp3.1\DuelSysClassLibrary.dll
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysClassLibrary\obj\Debug\netcoreapp3.1\DuelSysClassLibrary.pdb

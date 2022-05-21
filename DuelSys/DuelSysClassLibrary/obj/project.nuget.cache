@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "C7+cSmL/rdLdMlqA5ohcI6DEacPhasg4nXN1D4jU4C5WUKyT3G/V50RXo3NxpQYyqsoXah1BBFYJFS0JO9sZbg==",
+  "dgSpecHash": "AdGMITFVo9JGMb45pEbB/Um9ELr3d95U/Z30ijvgjI5m9MIDE09gDYrZ4aLc68/fcKHac4fwOOsZXRtyy7rsAw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Stefan\\Desktop\\STUDY\\Synthesis_New\\synthesys2nd_stefanpopescu\\DuelSys\\DuelSys\\DuelSys.csproj",
+  "projectFilePath": "C:\\Users\\Stefan\\Desktop\\STUDY\\Synthesis_New\\synthesys2nd_stefanpopescu\\DuelSys\\DuelSysClassLibrary\\DuelSysClassLibrary.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Stefan\\.nuget\\packages\\bouncycastle.netcore\\1.8.5\\bouncycastle.netcore.1.8.5.nupkg.sha512",
     "C:\\Users\\Stefan\\.nuget\\packages\\google.protobuf\\3.19.4\\google.protobuf.3.19.4.nupkg.sha512",

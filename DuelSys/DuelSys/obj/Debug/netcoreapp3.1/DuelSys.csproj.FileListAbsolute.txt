@@ -27,3 +27,5 @@ C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\D
 C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSys\obj\Debug\netcoreapp3.1\DuelSys.fmAddStaff.resources
 C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSys\obj\Debug\netcoreapp3.1\DuelSys.fmManagement.resources
 C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSys\obj\Debug\netcoreapp3.1\DuelSys.fmUpdateStaff.resources
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSys\bin\Debug\netcoreapp3.1\DuelSysClassLibrary.dll
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSys\bin\Debug\netcoreapp3.1\DuelSysClassLibrary.pdb

@@ -274,19 +274,6 @@
             "rid": "win"
           }
         }
-      },
-      "DuelSysClassLibrary/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "dependencies": {
-          "MySql.Data": "8.0.29"
-        },
-        "compile": {
-          "bin/placeholder/DuelSysClassLibrary.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/DuelSysClassLibrary.dll": {}
-        }
       }
     }
   },
@@ -861,16 +848,10 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
-    },
-    "DuelSysClassLibrary/1.0.0": {
-      "type": "project",
-      "path": "../DuelSysClassLibrary/DuelSysClassLibrary.csproj",
-      "msbuildProject": "../DuelSysClassLibrary/DuelSysClassLibrary.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "DuelSysClassLibrary >= 1.0.0",
       "MySql.Data >= 8.0.29"
     ]
   },
@@ -880,11 +861,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Stefan\\Desktop\\STUDY\\Synthesis_New\\synthesys2nd_stefanpopescu\\DuelSys\\DuelSys\\DuelSys.csproj",
-      "projectName": "DuelSys",
-      "projectPath": "C:\\Users\\Stefan\\Desktop\\STUDY\\Synthesis_New\\synthesys2nd_stefanpopescu\\DuelSys\\DuelSys\\DuelSys.csproj",
+      "projectUniqueName": "C:\\Users\\Stefan\\Desktop\\STUDY\\Synthesis_New\\synthesys2nd_stefanpopescu\\DuelSys\\DuelSysClassLibrary\\DuelSysClassLibrary.csproj",
+      "projectName": "DuelSysClassLibrary",
+      "projectPath": "C:\\Users\\Stefan\\Desktop\\STUDY\\Synthesis_New\\synthesys2nd_stefanpopescu\\DuelSys\\DuelSysClassLibrary\\DuelSysClassLibrary.csproj",
       "packagesPath": "C:\\Users\\Stefan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Stefan\\Desktop\\STUDY\\Synthesis_New\\synthesys2nd_stefanpopescu\\DuelSys\\DuelSys\\obj\\",
+      "outputPath": "C:\\Users\\Stefan\\Desktop\\STUDY\\Synthesis_New\\synthesys2nd_stefanpopescu\\DuelSys\\DuelSysClassLibrary\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Stefan\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -900,11 +881,7 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "projectReferences": {
-            "C:\\Users\\Stefan\\Desktop\\STUDY\\Synthesis_New\\synthesys2nd_stefanpopescu\\DuelSys\\DuelSysClassLibrary\\DuelSysClassLibrary.csproj": {
-              "projectPath": "C:\\Users\\Stefan\\Desktop\\STUDY\\Synthesis_New\\synthesys2nd_stefanpopescu\\DuelSys\\DuelSysClassLibrary\\DuelSysClassLibrary.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {
@@ -935,9 +912,6 @@
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
-          },
-          "Microsoft.WindowsDesktop.App.WindowsForms": {
-            "privateAssets": "none"
           }
         },
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
