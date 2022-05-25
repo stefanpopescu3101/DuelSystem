@@ -1,0 +1,175 @@
+﻿@page
+@model DuelSysWebsite.Pages.LoginModel
+@{
+}
+
+
+<style>
+
+    .container {
+        width: 100%;
+        height: 80vh;
+        font-family: sans-serif;
+        /*background: rgb(187, 187, 245);*/
+        background: #fbfffe;
+        color: #1B1B1E;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .card {
+        width: 350px;
+        height: 500px;
+        background: #ffa916;
+        box-shadow: 0 0 40px 20px rgba(0,0,0,0.26);
+        perspective: 1000px;
+    }
+
+    .inner-box {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+        transition: transform 1s;
+    }
+
+    .card-front, .card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-position: center;
+        background-size: cover;
+        padding: 55px;
+        box-sizing: border-box;
+        backface-visibility: hidden;
+    }
+
+    .card-back {
+        transform: rotateY(180deg);
+    }
+
+    .card h2 {
+        font-weight: normal;
+        font-size: 24px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .input-box {
+        width: 100%;
+        background: transparent;
+        border: 1px solid #1B1B1E;
+        margin: 6px 0;
+        height: 32px;
+        border-radius: 20px;
+        padding: 0 10px;
+        box-sizing: border-box;
+        outline: none;
+        text-align: center;
+        color: #1B1B1E;
+    }
+
+    ::placeholder {
+        color: #fff;
+        font-size: 12px;
+    }
+
+    button {
+        width: 100%;
+        background: transparent;
+        border: 1px solid #1B1B1E;
+        margin: 35px 0 10px;
+        height: 32px;
+        font-size: 12px;
+        border-radius: 20px;
+        padding: 0 10px;
+        box-sizing: border-box;
+        outline: none;
+        color: #FFF;
+        cursor: pointer;
+    }
+
+        button:hover {
+            background: #1b1b1e;
+            color: #fbfffe;
+        }
+
+    .submit-btn {
+    }
+
+        .submit-btn::after {
+            color: #333;
+            line-height: 32px;
+            font-size: 17px;
+            height: 32px;
+            width: 32px;
+            border-radius: 50%;
+            background: #fff;
+            position: absolute;
+            right: -1px;
+            top: -1px;
+        }
+
+    .card .btn {
+        margin-top: 70px;
+    }
+
+    .card a {
+        color: #fff;
+        text-decoration: none;
+        display: block;
+        text-align: center;
+        font-size: 13px;
+        margin-top: 8px;
+    }
+</style>
+
+<body>
+
+    <div class="container">
+        <div class="card">
+            <div class="inner-box" id="card">
+                <div class="card-front">
+                    <h2>Login</h2>
+                    <form method="post">
+                        <input type="text" asp-for="Username" class="input-box" placeholder="Username" required />
+                        <input type="password" asp-for="Password" class="input-box" placeholder="Password" required />
+                        <button type="submit" class="submit-btn">Login</button>
+                    </form>
+                    <a href="">Forgot password</a>
+                    <br />
+                    <button type="button" class="btn" onclick="openRegister()">I'm new here!</button>
+
+                </div>
+                <div class="card-back">
+                    <h2>Register</h2>
+                    <form method="post" asp-page-handler="Register">
+                        <input type="text" asp-for="Username" class="input-box" placeholder="Username" required />
+                        <input type="password" asp-for="Password" class="input-box" placeholder="Password" required />
+                        <input type="password" asp-for="Password" class="input-box" placeholder="Confirm password" required />
+                        <button type="submit" class="submit-btn">Register</button>
+                    </form>
+                    <a href="">Forgot password</a>
+                    <br />
+                    <button type="button" class="btn" onclick="openLogin()">I have an account!</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+        var card = document.getElementById("card");
+
+        function openRegister() {
+            card.style.transform = "rotateY(-180deg)";
+        }
+        function openLogin() {
+            card.style.transform = "rotateY(0deg)";
+        }
+    </script>
+
+</body>

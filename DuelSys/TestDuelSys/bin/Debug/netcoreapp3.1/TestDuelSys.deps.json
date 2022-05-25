@@ -1201,14 +1201,6 @@
           "System.Xml.ReaderWriter": "4.3.0"
         }
       },
-      "DuelSysClassLibrary/1.0.0": {
-        "dependencies": {
-          "MySql.Data": "8.0.29"
-        },
-        "runtime": {
-          "DuelSysClassLibrary.dll": {}
-        }
-      },
       "DuelSysEntities/1.0.0": {
         "runtime": {
           "DuelSysEntities.dll": {}
@@ -1974,11 +1966,6 @@
       "sha512": "sha512-5zJ0XDxAIg8iy+t4aMnQAu0MqVbqyvfoUVl1yDV61xdo3Vth45oA2FoY4pPkxYAH5f8ixpmTqXeEIya95x0aCQ==",
       "path": "system.xml.xdocument/4.3.0",
       "hashPath": "system.xml.xdocument.4.3.0.nupkg.sha512"
-    },
-    "DuelSysClassLibrary/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
     },
     "DuelSysEntities/1.0.0": {
       "type": "project",

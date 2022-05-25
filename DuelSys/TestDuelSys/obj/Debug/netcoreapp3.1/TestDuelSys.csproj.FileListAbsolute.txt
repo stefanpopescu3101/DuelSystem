@@ -100,14 +100,12 @@ C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\T
 C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\TestDuelSys\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
 C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\TestDuelSys\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
 C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\TestDuelSys\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
-C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\TestDuelSys\bin\Debug\netcoreapp3.1\DuelSysClassLibrary.dll
 C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\TestDuelSys\bin\Debug\netcoreapp3.1\DuelSysEntities.dll
 C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\TestDuelSys\bin\Debug\netcoreapp3.1\DuelSysManagers.dll
 C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\TestDuelSys\bin\Debug\netcoreapp3.1\DuelSysMediators.dll
 C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\TestDuelSys\bin\Debug\netcoreapp3.1\DuelSysEntities.pdb
 C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\TestDuelSys\bin\Debug\netcoreapp3.1\DuelSysManagers.pdb
 C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\TestDuelSys\bin\Debug\netcoreapp3.1\DuelSysMediators.pdb
-C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\TestDuelSys\bin\Debug\netcoreapp3.1\DuelSysClassLibrary.pdb
 C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\TestDuelSys\obj\Debug\netcoreapp3.1\TestDuelSys.csproj.AssemblyReference.cache
 C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\TestDuelSys\obj\Debug\netcoreapp3.1\TestDuelSys.csproj.CopyComplete
 C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\TestDuelSys\obj\Debug\netcoreapp3.1\TestDuelSys.dll

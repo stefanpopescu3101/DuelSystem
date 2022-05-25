@@ -16,11 +16,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestDuelSys", "TestDuelSys\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DuelSysWebsite", "DuelSysWebsite\DuelSysWebsite.csproj", "{58A7F77E-1C45-489F-982F-412691021E49}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DuelSysEntities", "DuelSysEntities\DuelSysEntities.csproj", "{2D157A6C-FEE3-4CB4-AB0C-163F19871F9D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DuelSysEntities", "DuelSysEntities\DuelSysEntities.csproj", "{2D157A6C-FEE3-4CB4-AB0C-163F19871F9D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DuelSysManagers", "DuelSysManagers\DuelSysManagers.csproj", "{2E637D4F-CEEB-40B0-8CBE-64C48DA3E874}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DuelSysManagers", "DuelSysManagers\DuelSysManagers.csproj", "{2E637D4F-CEEB-40B0-8CBE-64C48DA3E874}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DuelSysMediators", "DuelSysMediators\DuelSysMediators.csproj", "{B70C01D8-C9D6-471D-BB50-272F181AED8E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DuelSysMediators", "DuelSysMediators\DuelSysMediators.csproj", "{B70C01D8-C9D6-471D-BB50-272F181AED8E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
