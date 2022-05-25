@@ -22,6 +22,7 @@ namespace DuelSysClassLibrary.Mediators.FakeData
         public bool AddStaff(Staff staff)
         {
             return true; 
+            ///here modifictions
         }
 
         public List<Staff> GetStaffs()
