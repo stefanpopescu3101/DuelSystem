@@ -1,9 +1,9 @@
 ﻿using DuelSysApp.GeneralForms;
 using DuelSysApp.StaffForms;
 using DuelSysApp.TournamentForms;
-using DuelSysClassLibrary.Entities;
-using DuelSysClassLibrary.Managers;
-using DuelSysClassLibrary.Mediators;
+using DuelSysEntities;
+using DuelSysManagers;
+using DuelSysMediators;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

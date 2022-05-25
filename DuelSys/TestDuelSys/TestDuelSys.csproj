@@ -14,6 +14,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DuelSysEntities\DuelSysEntities.csproj" />
+    <ProjectReference Include="..\DuelSysManagers\DuelSysManagers.csproj" />
+    <ProjectReference Include="..\DuelSysMediators\DuelSysMediators.csproj" />
     <ProjectReference Include="..\DuelSys\DuelSysApp.csproj" />
   </ItemGroup>
 

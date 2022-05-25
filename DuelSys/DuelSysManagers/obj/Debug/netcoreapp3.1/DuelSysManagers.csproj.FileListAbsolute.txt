@@ -1,0 +1,15 @@
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysManagers\obj\Debug\netcoreapp3.1\DuelSysManagers.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysManagers\obj\Debug\netcoreapp3.1\DuelSysManagers.AssemblyInfoInputs.cache
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysManagers\obj\Debug\netcoreapp3.1\DuelSysManagers.AssemblyInfo.cs
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysManagers\obj\Debug\netcoreapp3.1\DuelSysManagers.csproj.CoreCompileInputs.cache
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysManagers\bin\Debug\netcoreapp3.1\DuelSysManagers.deps.json
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysManagers\bin\Debug\netcoreapp3.1\DuelSysManagers.dll
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysManagers\bin\Debug\netcoreapp3.1\DuelSysManagers.pdb
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysManagers\bin\Debug\netcoreapp3.1\DuelSysEntities.dll
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysManagers\bin\Debug\netcoreapp3.1\DuelSysMediators.dll
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysManagers\bin\Debug\netcoreapp3.1\DuelSysEntities.pdb
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysManagers\bin\Debug\netcoreapp3.1\DuelSysMediators.pdb
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysManagers\obj\Debug\netcoreapp3.1\DuelSysManagers.csproj.AssemblyReference.cache
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysManagers\obj\Debug\netcoreapp3.1\DuelSysManagers.csproj.CopyComplete
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysManagers\obj\Debug\netcoreapp3.1\DuelSysManagers.dll
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysManagers\obj\Debug\netcoreapp3.1\DuelSysManagers.pdb

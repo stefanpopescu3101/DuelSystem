@@ -9,6 +9,9 @@
       "TestDuelSys/1.0.0": {
         "dependencies": {
           "DuelSysApp": "1.0.0",
+          "DuelSysEntities": "1.0.0",
+          "DuelSysManagers": "1.0.0",
+          "DuelSysMediators": "1.0.0",
           "MSTest.TestAdapter": "2.2.3",
           "MSTest.TestFramework": "2.2.3",
           "Microsoft.NET.Test.Sdk": "16.9.4",
@@ -1198,21 +1201,35 @@
           "System.Xml.ReaderWriter": "4.3.0"
         }
       },
-      "DuelSysApp/1.0.0": {
-        "dependencies": {
-          "DuelSysClassLibrary": "1.0.0",
-          "MySql.Data": "8.0.29"
-        },
-        "runtime": {
-          "DuelSysApp.dll": {}
-        }
-      },
       "DuelSysClassLibrary/1.0.0": {
         "dependencies": {
           "MySql.Data": "8.0.29"
         },
         "runtime": {
           "DuelSysClassLibrary.dll": {}
+        }
+      },
+      "DuelSysEntities/1.0.0": {
+        "runtime": {
+          "DuelSysEntities.dll": {}
+        }
+      },
+      "DuelSysManagers/1.0.0": {
+        "dependencies": {
+          "DuelSysEntities": "1.0.0",
+          "DuelSysMediators": "1.0.0"
+        },
+        "runtime": {
+          "DuelSysManagers.dll": {}
+        }
+      },
+      "DuelSysMediators/1.0.0": {
+        "dependencies": {
+          "DuelSysEntities": "1.0.0",
+          "MySql.Data": "8.0.29"
+        },
+        "runtime": {
+          "DuelSysMediators.dll": {}
         }
       }
     }
@@ -1958,12 +1975,22 @@
       "path": "system.xml.xdocument/4.3.0",
       "hashPath": "system.xml.xdocument.4.3.0.nupkg.sha512"
     },
-    "DuelSysApp/1.0.0": {
+    "DuelSysClassLibrary/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "DuelSysClassLibrary/1.0.0": {
+    "DuelSysEntities/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DuelSysManagers/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DuelSysMediators/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

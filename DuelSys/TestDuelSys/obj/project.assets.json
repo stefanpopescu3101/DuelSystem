@@ -1938,6 +1938,44 @@
         "runtime": {
           "bin/placeholder/DuelSysClassLibrary.dll": {}
         }
+      },
+      "DuelSysEntities/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/DuelSysEntities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DuelSysEntities.dll": {}
+        }
+      },
+      "DuelSysManagers/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "DuelSysEntities": "1.0.0",
+          "DuelSysMediators": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DuelSysManagers.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DuelSysManagers.dll": {}
+        }
+      },
+      "DuelSysMediators/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "DuelSysEntities": "1.0.0",
+          "MySql.Data": "8.0.29"
+        },
+        "compile": {
+          "bin/placeholder/DuelSysMediators.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DuelSysMediators.dll": {}
+        }
       }
     }
   },
@@ -6932,11 +6970,29 @@
       "type": "project",
       "path": "../DuelSysClassLibrary/DuelSysClassLibrary.csproj",
       "msbuildProject": "../DuelSysClassLibrary/DuelSysClassLibrary.csproj"
+    },
+    "DuelSysEntities/1.0.0": {
+      "type": "project",
+      "path": "../DuelSysEntities/DuelSysEntities.csproj",
+      "msbuildProject": "../DuelSysEntities/DuelSysEntities.csproj"
+    },
+    "DuelSysManagers/1.0.0": {
+      "type": "project",
+      "path": "../DuelSysManagers/DuelSysManagers.csproj",
+      "msbuildProject": "../DuelSysManagers/DuelSysManagers.csproj"
+    },
+    "DuelSysMediators/1.0.0": {
+      "type": "project",
+      "path": "../DuelSysMediators/DuelSysMediators.csproj",
+      "msbuildProject": "../DuelSysMediators/DuelSysMediators.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "DuelSysApp >= 1.0.0",
+      "DuelSysEntities >= 1.0.0",
+      "DuelSysManagers >= 1.0.0",
+      "DuelSysMediators >= 1.0.0",
       "MSTest.TestAdapter >= 2.2.3",
       "MSTest.TestFramework >= 2.2.3",
       "Microsoft.NET.Test.Sdk >= 16.9.4",
@@ -6970,6 +7026,15 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
+            "C:\\Users\\Stefan\\Desktop\\STUDY\\Synthesis_New\\synthesys2nd_stefanpopescu\\DuelSys\\DuelSysEntities\\DuelSysEntities.csproj": {
+              "projectPath": "C:\\Users\\Stefan\\Desktop\\STUDY\\Synthesis_New\\synthesys2nd_stefanpopescu\\DuelSys\\DuelSysEntities\\DuelSysEntities.csproj"
+            },
+            "C:\\Users\\Stefan\\Desktop\\STUDY\\Synthesis_New\\synthesys2nd_stefanpopescu\\DuelSys\\DuelSysManagers\\DuelSysManagers.csproj": {
+              "projectPath": "C:\\Users\\Stefan\\Desktop\\STUDY\\Synthesis_New\\synthesys2nd_stefanpopescu\\DuelSys\\DuelSysManagers\\DuelSysManagers.csproj"
+            },
+            "C:\\Users\\Stefan\\Desktop\\STUDY\\Synthesis_New\\synthesys2nd_stefanpopescu\\DuelSys\\DuelSysMediators\\DuelSysMediators.csproj": {
+              "projectPath": "C:\\Users\\Stefan\\Desktop\\STUDY\\Synthesis_New\\synthesys2nd_stefanpopescu\\DuelSys\\DuelSysMediators\\DuelSysMediators.csproj"
+            },
             "C:\\Users\\Stefan\\Desktop\\STUDY\\Synthesis_New\\synthesys2nd_stefanpopescu\\DuelSys\\DuelSys\\DuelSysApp.csproj": {
               "projectPath": "C:\\Users\\Stefan\\Desktop\\STUDY\\Synthesis_New\\synthesys2nd_stefanpopescu\\DuelSys\\DuelSys\\DuelSysApp.csproj"
             }

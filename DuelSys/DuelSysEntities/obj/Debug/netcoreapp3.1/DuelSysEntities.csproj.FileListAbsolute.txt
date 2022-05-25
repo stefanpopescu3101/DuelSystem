@@ -1,0 +1,10 @@
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysEntities\obj\Debug\netcoreapp3.1\DuelSysEntities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysEntities\obj\Debug\netcoreapp3.1\DuelSysEntities.AssemblyInfoInputs.cache
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysEntities\obj\Debug\netcoreapp3.1\DuelSysEntities.AssemblyInfo.cs
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysEntities\obj\Debug\netcoreapp3.1\DuelSysEntities.csproj.CoreCompileInputs.cache
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysEntities\bin\Debug\netcoreapp3.1\DuelSysEntities.deps.json
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysEntities\bin\Debug\netcoreapp3.1\DuelSysEntities.dll
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysEntities\bin\Debug\netcoreapp3.1\DuelSysEntities.pdb
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysEntities\obj\Debug\netcoreapp3.1\DuelSysEntities.csproj.AssemblyReference.cache
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysEntities\obj\Debug\netcoreapp3.1\DuelSysEntities.dll
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysEntities\obj\Debug\netcoreapp3.1\DuelSysEntities.pdb

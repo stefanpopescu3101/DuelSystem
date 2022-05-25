@@ -1,6 +1,6 @@
-﻿using DuelSysClassLibrary.Entities;
-using DuelSysClassLibrary.Managers;
-using DuelSysClassLibrary.Mediators.FakeData;
+﻿using DuelSysEntities;
+using DuelSysManagers;
+using DuelSysMediators.FakeData;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
