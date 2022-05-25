@@ -38,7 +38,7 @@ namespace DuelSysWebsite.Pages
             playerManager = new PlayerManager(new PlayerMediator());
             staffManager = new StaffManager(new StaffMediator());
             if (ModelState.IsValid
-                && ((playerManager.CheckPlayerCredentials(Username, Hasher.ComputeSha256Hash(Password)) != false)))
+                && ((playerManager.CheckCredentials(Username, Hasher.ComputeSha256Hash(Password)) != null)))
 
             {
 

@@ -36,17 +36,16 @@ namespace DuelSysManagers
 
         }
 
-        public bool CheckPlayerCredentials(string username, string password)
+        public Player CheckCredentials(string username, string password)
         {
-            players = playerMediator.GetPlayers();
-            foreach (Player player in players)
+            foreach (Player player in GetAllPlayers())
             {
                 if (player.Username == username && player.Password == password)
                 {
-                    return true;
+                    return player;
                 }
             }
-            return false;
+            return null;
         }
 
         //public void EditPlayer(Player player, string username, string password)

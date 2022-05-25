@@ -20,6 +20,23 @@ namespace TestDuelSys
         }
 
         [TestMethod]
+        public void CheckCredentialsSuccessTest()
+        {
+            //arrange
+
+
+            //act
+            Player player = playerManager.CheckCredentials("username", "password");
+
+            //error message
+
+            //assert
+            Assert.AreEqual(player.Username, "username");
+            Assert.AreEqual(player.Password, "password");
+
+        }
+
+        [TestMethod]
         public void AddMemberTest()
         {
             //arrange

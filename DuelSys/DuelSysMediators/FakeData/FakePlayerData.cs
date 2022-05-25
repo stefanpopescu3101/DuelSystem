@@ -13,7 +13,7 @@ namespace DuelSysMediators.FakeData
         {
             players = new List<Player>();
             players.Add(new Player(1, "aa", "bb"));
-            players.Add(new Player("bb", "cc"));
+            players.Add(new Player("username", "password"));
             players.Add(new Player("cc", "dd"));
             players.Add(new Player("dd", "ee"));
         }
