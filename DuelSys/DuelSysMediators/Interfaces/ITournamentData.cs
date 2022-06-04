@@ -11,5 +11,6 @@ namespace DuelSysMediators.Interfaces
         bool RemoveTournament(Tournament tournament);
         List<Tournament> GetTournaments();
         bool UpdateInfo(Tournament tournament);
+        List<EnrolledTournament> GetEnrollings();
     }
 }

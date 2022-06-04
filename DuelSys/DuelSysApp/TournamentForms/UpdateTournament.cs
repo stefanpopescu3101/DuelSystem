@@ -42,18 +42,19 @@ namespace DuelSysApp.TournamentForms
             tbMinPlayers.Text = tournament.MinPlayers.ToString();
             tbMaxPlayers.Text = tournament.MaxPlayers.ToString();
             cmbLocation.Text = tournament.Location;
+            cmbStatus.Text = tournament.Status;
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (cmbSportType.Text != "" && tbDescription.Text != "" && dtpStartDate.Text != "" && dtpEndDate.Text != "" && tbMinPlayers.Text != "" && tbMaxPlayers.Text != "" && cmbLocation.Text != "")
+            if (cmbSportType.Text != "" && tbDescription.Text != "" && dtpStartDate.Text != "" && dtpEndDate.Text != "" && tbMinPlayers.Text != "" && tbMaxPlayers.Text != "" && cmbLocation.Text != "" && cmbStatus.Text!="")
             {
                 DateTime startDate = Convert.ToDateTime(dtpStartDate.Text);
                 DateTime endDate = Convert.ToDateTime(dtpEndDate.Text);
 
                 Tournament tournament = tournamentManager.GetTournament(ID);
 
-                tournamentManager.UpdateInfo(tournament, cmbSportType.Text, tbDescription.Text, startDate.ToString("d"), endDate.ToString("d"), Convert.ToInt32(tbMinPlayers.Text), Convert.ToInt32(tbMaxPlayers.Text), cmbLocation.Text);
+                tournamentManager.UpdateInfo(tournament, cmbSportType.Text, tbDescription.Text, startDate.ToString("d"), endDate.ToString("d"), Convert.ToInt32(tbMinPlayers.Text), Convert.ToInt32(tbMaxPlayers.Text), cmbLocation.Text, cmbStatus.Text);
 
                 MessageBox.Show("Tournament has been updated successfuly!");
 

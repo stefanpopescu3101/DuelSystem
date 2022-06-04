@@ -8,6 +8,10 @@
     ".NETCoreApp,Version=v3.1": {
       "DuelSysApp/1.0.0": {
         "dependencies": {
+          "DuelSysClassLibrary": "1.0.0",
+          "DuelSysEntities": "1.0.0",
+          "DuelSysManagers": "1.0.0",
+          "DuelSysMediators": "1.0.0",
           "MySql.Data": "8.0.29"
         },
         "runtime": {
@@ -143,6 +147,29 @@
       "System.Windows.Extensions/4.7.0": {
         "dependencies": {
           "System.Drawing.Common": "4.7.0"
+        }
+      },
+      "DuelSysEntities/1.0.0": {
+        "runtime": {
+          "DuelSysEntities.dll": {}
+        }
+      },
+      "DuelSysManagers/1.0.0": {
+        "dependencies": {
+          "DuelSysEntities": "1.0.0",
+          "DuelSysMediators": "1.0.0"
+        },
+        "runtime": {
+          "DuelSysManagers.dll": {}
+        }
+      },
+      "DuelSysMediators/1.0.0": {
+        "dependencies": {
+          "DuelSysEntities": "1.0.0",
+          "MySql.Data": "8.0.29"
+        },
+        "runtime": {
+          "DuelSysMediators.dll": {}
         }
       }
     }
@@ -285,6 +312,21 @@
       "sha512": "sha512-CeWTdRNfRaSh0pm2gDTJFwVaXfTq6Xwv/sA887iwPTneW7oMtMlpvDIO+U60+3GWTB7Aom6oQwv5VZVUhQRdPQ==",
       "path": "system.windows.extensions/4.7.0",
       "hashPath": "system.windows.extensions.4.7.0.nupkg.sha512"
+    },
+    "DuelSysEntities/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DuelSysManagers/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DuelSysMediators/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

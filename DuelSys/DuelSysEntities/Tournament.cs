@@ -15,6 +15,7 @@ namespace DuelSysEntities
         private int maxPlayers;
         private string location;
         private string tournamentType;
+        private string status;
 
         public int ID
         {
@@ -69,9 +70,15 @@ namespace DuelSysEntities
             set { tournamentType = value; }
         }
 
+        public string Status
+        {
+            get { return status; }
+            set { status = value; }
+        }
 
 
-        public Tournament(int id, string sportType, string description, string startDate, string endDate, int minPlayers, int maxPlayers, string location, string tournamentType)
+
+        public Tournament(int id, string sportType, string description, string startDate, string endDate, int minPlayers, int maxPlayers, string location, string tournamentType, string status)
         {
             this.id = id;
             this.sportType = sportType;
@@ -82,10 +89,11 @@ namespace DuelSysEntities
             this.maxPlayers = maxPlayers;
             this.location = location;
             this.tournamentType = tournamentType;
+            this.status = status;
         }
 
 
-        public Tournament(string sportType, string description, string startDate, string endDate, int minPlayers, int maxPlayers, string location, string tournamentType)
+        public Tournament(string sportType, string description, string startDate, string endDate, int minPlayers, int maxPlayers, string location, string tournamentType, string status)
         {
             
             this.sportType = sportType;
@@ -96,9 +104,10 @@ namespace DuelSysEntities
             this.maxPlayers = maxPlayers;
             this.location = location;
             this.tournamentType = tournamentType;
+            this.status = status;
         }
 
-        public void UpdateInfo(string sportType, string description, string startDate, string endDate, int minPlayers, int maxPlayers, string location)
+        public void UpdateInfo(string sportType, string description, string startDate, string endDate, int minPlayers, int maxPlayers, string location, string status)
         {
             this.sportType = sportType;
             this.description = description;
@@ -107,6 +116,7 @@ namespace DuelSysEntities
             this.minPlayers = minPlayers;
             this.maxPlayers = maxPlayers;
             this.location = location;
+            this.status = status;
             
         }
     }

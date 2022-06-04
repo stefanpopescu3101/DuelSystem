@@ -195,6 +195,8 @@ namespace DuelSysApp.TournamentForms
             // cmbTournamentType
             // 
             this.cmbTournamentType.FormattingEnabled = true;
+            this.cmbTournamentType.Items.AddRange(new object[] {
+            "round-robin"});
             this.cmbTournamentType.Location = new System.Drawing.Point(234, 307);
             this.cmbTournamentType.Name = "cmbTournamentType";
             this.cmbTournamentType.Size = new System.Drawing.Size(121, 23);

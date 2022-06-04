@@ -11,12 +11,20 @@ namespace DuelSysManagers
     {
         private List<Tournament> tournaments;
 
+        private List<Player> enrolledPlayers;
+
+        private List<EnrolledTournament> enrolledTournaments;
+
         private ITournamentData mediator;
 
+        private PlayerManager playerManager;
 
         public TournamentManager(ITournamentData src)
         {
             tournaments = new List<Tournament>();
+            enrolledPlayers = new List<Player>();
+            enrolledTournaments = new List<EnrolledTournament>();
+            playerManager = new PlayerManager(new PlayerMediator());
             mediator = src;
         }
 
@@ -78,9 +86,50 @@ namespace DuelSysManagers
             return null;
         }
 
-        public void UpdateInfo(Tournament tournament, string sportType, string description, string startDate, string endDate, int minPlayers, int maxPlayers, string location)
+        //public bool GenerateTournamentStructure(int id)
+        //{
+        //    Tournament tournament = GetTournament(id);
+        //    if(tournament)
+        //}
+
+
+        //Gets all enrollments for a specific tournament
+        public List<EnrolledTournament> GetEnrollingsForTournament(int id)
         {
-            tournament.UpdateInfo(sportType, description, startDate, endDate, minPlayers, maxPlayers, location);
+            List<EnrolledTournament> enrolledForTournament = new List<EnrolledTournament>();
+
+            enrolledTournaments = mediator.GetEnrollings();
+            foreach(EnrolledTournament enrolledTournament in enrolledTournaments)
+            {
+                if(enrolledTournament.TournamentID==id)
+                {
+                    enrolledForTournament.Add(enrolledTournament);
+                }
+            }
+            return enrolledForTournament;
+        }
+
+        //Gets all players objects enrolled for a specific tournament
+        public List<Player> GetPlayersEnrolledForTournament(int id)
+        {
+
+            foreach(EnrolledTournament enrolledTournament in GetEnrollingsForTournament(id))
+            {
+                foreach(Player player in playerManager.GetAllPlayers())
+                {
+                    if (player.Id == enrolledTournament.PlayerID)
+                    {
+                        enrolledPlayers.Add(player);
+                    }
+                }
+            }
+
+            return enrolledPlayers;
+        }
+
+        public void UpdateInfo(Tournament tournament, string sportType, string description, string startDate, string endDate, int minPlayers, int maxPlayers, string location, string status)
+        {
+            tournament.UpdateInfo(sportType, description, startDate, endDate, minPlayers, maxPlayers, location, status);
             mediator.UpdateInfo(tournament);
         }
 

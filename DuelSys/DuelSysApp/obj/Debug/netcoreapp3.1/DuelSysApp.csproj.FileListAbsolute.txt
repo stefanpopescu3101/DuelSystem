@@ -46,8 +46,6 @@ C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\D
 C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysApp\bin\Debug\netcoreapp3.1\Ubiety.Dns.Core.dll
 C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysApp\bin\Debug\netcoreapp3.1\ZstdNet.dll
 C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysApp\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysApp\bin\Debug\netcoreapp3.1\DuelSysClassLibrary.dll
-C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysApp\bin\Debug\netcoreapp3.1\DuelSysClassLibrary.pdb
 C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysApp\obj\Debug\netcoreapp3.1\DuelSysApp.GeneralForms.fmLogIn.resources
 C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysApp\obj\Debug\netcoreapp3.1\DuelSysApp.GeneralForms.fmManagement.resources
 C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysApp\obj\Debug\netcoreapp3.1\DuelSysApp.StaffForms.fmAddStaff.resources
@@ -63,3 +61,10 @@ C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\D
 C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysApp\obj\Debug\netcoreapp3.1\DuelSysApp.dll
 C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysApp\obj\Debug\netcoreapp3.1\DuelSysApp.pdb
 C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysApp\obj\Debug\netcoreapp3.1\DuelSysApp.genruntimeconfig.cache
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysApp\obj\Debug\netcoreapp3.1\DuelSysApp.csproj.AssemblyReference.cache
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysApp\bin\Debug\netcoreapp3.1\DuelSysEntities.dll
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysApp\bin\Debug\netcoreapp3.1\DuelSysManagers.dll
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysApp\bin\Debug\netcoreapp3.1\DuelSysMediators.dll
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysApp\bin\Debug\netcoreapp3.1\DuelSysEntities.pdb
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysApp\bin\Debug\netcoreapp3.1\DuelSysManagers.pdb
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysApp\bin\Debug\netcoreapp3.1\DuelSysMediators.pdb
