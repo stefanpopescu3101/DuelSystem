@@ -15,16 +15,30 @@ namespace DuelSysManagers
 
         private List<EnrolledTournament> enrolledTournaments;
 
+        private List<Round> tournamentRounds;
+
+        private List<Match> roundMatches;
+
         private ITournamentData mediator;
 
         private PlayerManager playerManager;
+
+        private RoundManager roundManager;
+
+        private MatchManager matchManager;
 
         public TournamentManager(ITournamentData src)
         {
             tournaments = new List<Tournament>();
             enrolledPlayers = new List<Player>();
             enrolledTournaments = new List<EnrolledTournament>();
+            tournamentRounds = new List<Round>();
+            roundMatches = new List<Match>();
+
             playerManager = new PlayerManager(new PlayerMediator());
+            roundManager = new RoundManager(new RoundMediator());
+            matchManager = new MatchManager(new MatchMediator());
+
             mediator = src;
         }
 
@@ -86,11 +100,30 @@ namespace DuelSysManagers
             return null;
         }
 
-        //public bool GenerateTournamentStructure(int id)
-        //{
-        //    Tournament tournament = GetTournament(id);
-        //    if(tournament)
-        //}
+        public bool GenerateTournamentStructure(int id)
+        {
+            Tournament tournament = GetTournament(id);
+
+            if (tournament.Status=="LOCKED")
+            {
+                enrolledPlayers = GetPlayersEnrolledForTournament(id);
+
+                roundManager.AddRound(new Round(id, false));
+                roundManager.AddRound(new Round(id, false));
+                roundManager.AddRound(new Round(id, false));
+
+                foreach(Round round in roundManager.GetRoundsForTournament(id))
+                {
+                    for(int i=0; i<enrolledPlayers.Count;i+=2)
+                    {
+                        matchManager.AddMatch(new Match(round.RoundID, enrolledPlayers[i].Id, enrolledPlayers[i].Username, enrolledPlayers[i + 1].Id, enrolledPlayers[i + 1].Username));
+                    }
+                }
+                return true;
+            }
+
+            return false;
+        }
 
 
         //Gets all enrollments for a specific tournament
@@ -99,6 +132,7 @@ namespace DuelSysManagers
             List<EnrolledTournament> enrolledForTournament = new List<EnrolledTournament>();
 
             enrolledTournaments = mediator.GetEnrollings();
+
             foreach(EnrolledTournament enrolledTournament in enrolledTournaments)
             {
                 if(enrolledTournament.TournamentID==id)
@@ -126,6 +160,8 @@ namespace DuelSysManagers
 
             return enrolledPlayers;
         }
+
+        
 
         public void UpdateInfo(Tournament tournament, string sportType, string description, string startDate, string endDate, int minPlayers, int maxPlayers, string location, string status)
         {

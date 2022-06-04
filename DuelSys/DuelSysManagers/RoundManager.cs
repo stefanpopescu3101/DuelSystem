@@ -36,5 +36,20 @@ namespace DuelSysManagers
             rounds = roundMediator.GetRounds();
             return rounds;
         }
+
+        public List<Round> GetRoundsForTournament(int id)
+        {
+            List<Round> roundsForTournament = new List<Round>();
+
+            foreach(Round round in GetRounds())
+            {
+                if(round.TournamentID==id)
+                {
+                    roundsForTournament.Add(round);
+                }
+            }
+
+            return roundsForTournament;
+        }
     }
 }
