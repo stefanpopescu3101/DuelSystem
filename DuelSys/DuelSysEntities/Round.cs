@@ -12,6 +12,8 @@ namespace DuelSysEntities
 
         private bool status;
 
+        int i;
+
         public int RoundID
         {
             get { return roundID; }
@@ -30,17 +32,25 @@ namespace DuelSysEntities
             set { status = value; }
         }
 
-        public Round(int roundID, int tournamentID, bool status)
+        public int I
+        {
+            get { return i; }
+            set { i = value; }
+        }
+
+        public Round(int roundID, int tournamentID, bool status, int i)
         {
             this.roundID = roundID;
             this.tournamentID = tournamentID;
             this.status = status;
+            this.i = i;
         }
 
-        public Round(int tournamentID, bool status)
+        public Round(int tournamentID, bool status, int i)
         {
             this.tournamentID = tournamentID;
             this.status = status;
+            this.i = i;
         }
 
 

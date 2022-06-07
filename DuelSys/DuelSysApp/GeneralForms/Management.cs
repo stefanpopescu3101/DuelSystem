@@ -155,5 +155,10 @@ namespace DuelSysApp.GeneralForms
             fmLogIn a = new fmLogIn();
             a.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            tournamentManager.GenerateTournamentStructure(1);
+        }
     }
 }

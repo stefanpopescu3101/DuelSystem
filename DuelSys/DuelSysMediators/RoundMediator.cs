@@ -31,7 +31,7 @@ namespace DuelSysMediators
                     {
                         while (dataReader.Read())
                         {
-                            Round round = round = new Round(Convert.ToInt32(dataReader["RoundID"]), Convert.ToInt32(dataReader["TournamentID"]), Convert.ToBoolean(dataReader["Status"]));
+                            Round round = round = new Round(Convert.ToInt32(dataReader["RoundID"]), Convert.ToInt32(dataReader["TournamentID"]), Convert.ToBoolean(dataReader["Status"]), Convert.ToInt32(dataReader["test"]));
 
                             rounds.Add(round);
                         }
@@ -60,13 +60,14 @@ namespace DuelSysMediators
             {
                 try
                 {
-                    query = "INSERT INTO rounds (RoundID, TournamentID, Status) VALUES (@RoundID, @TournamentID, @Status)";
+                    query = "INSERT INTO rounds (RoundID, TournamentID, Status, test) VALUES (@RoundID, @TournamentID, @Status, @i)";
 
                     SqlQuery(query);
 
                     AddWithValue("@RoundID", round.RoundID);
                     AddWithValue("@TournamentID", round.TournamentID);
                     AddWithValue("@Status", round.Status);
+                    AddWithValue("@i", round.I);
                     
 
                     NonQueryEx();

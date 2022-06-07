@@ -4,6 +4,7 @@ using DuelSysEntities;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace DuelSysManagers
 {
@@ -104,21 +105,64 @@ namespace DuelSysManagers
         {
             Tournament tournament = GetTournament(id);
 
-            if (tournament.Status=="LOCKED")
+            if (tournament.Status=="ENROLL")
             {
                 enrolledPlayers = GetPlayersEnrolledForTournament(id);
 
-                roundManager.AddRound(new Round(id, false));
-                roundManager.AddRound(new Round(id, false));
-                roundManager.AddRound(new Round(id, false));
-
-                foreach(Round round in roundManager.GetRoundsForTournament(id))
+                if(enrolledPlayers.Count %2 !=0)
                 {
-                    for(int i=0; i<enrolledPlayers.Count;i+=2)
-                    {
-                        matchManager.AddMatch(new Match(round.RoundID, enrolledPlayers[i].Id, enrolledPlayers[i].Username, enrolledPlayers[i + 1].Id, enrolledPlayers[i + 1].Username));
-                    }
+                    enrolledPlayers.Add(new Player("Dummy", "ssss"));
                 }
+
+                int numRounds = (enrolledPlayers.Count - 1);
+
+                for(int i=0; i<numRounds;i++)
+                {
+                    roundManager.AddRound(new Round(id, false, i));
+                }
+
+                List<Round> rounds = new List<Round>(); 
+                rounds = roundManager.GetRoundsForTournament(id);
+
+                int halfSize = enrolledPlayers.Count / 2;
+
+                List<Player> players = new List<Player>();
+
+
+                players.AddRange(enrolledPlayers.Skip(halfSize).Take(halfSize));
+                players.AddRange(enrolledPlayers.Skip(1).Take(halfSize - 1).ToArray().Reverse());
+
+                int teamSize = players.Count;
+
+                for(int round=0; round< numRounds;round++)
+                {
+                    int teamIdx = round % teamSize;
+
+                    matchManager.AddMatch(new Match(rounds[round].RoundID, players[teamIdx].Id, players[teamIdx].Username,  enrolledPlayers[0].Id, enrolledPlayers[0].Username));
+
+                    for(int idx = 1; idx < halfSize; idx++)
+                    {
+                        int firstTeam = (round + idx) % teamSize;
+                        int secondTeam = (round + teamSize - idx) % teamSize;
+                        matchManager.AddMatch(new Match(rounds[round].RoundID, players[firstTeam].Id, players[firstTeam].Username, players[secondTeam].Id, players[secondTeam].Username));
+                    }
+
+
+                }
+
+                //roundManager.AddRound(new Round(id, false));
+                //roundManager.AddRound(new Round(id, false));
+                //roundManager.AddRound(new Round(id, false));
+
+                //foreach(Round round in roundManager.GetRoundsForTournament(id))
+                //{
+                //    for(int i=0; i<enrolledPlayers.Count;i+=2)
+                //    {
+                //        matchManager.AddMatch(new Match(round.RoundID, enrolledPlayers[i].Id, enrolledPlayers[i].Username, enrolledPlayers[i + 1].Id, enrolledPlayers[i + 1].Username));
+                //    }
+                //}
+                //return true;
+
                 return true;
             }
 
