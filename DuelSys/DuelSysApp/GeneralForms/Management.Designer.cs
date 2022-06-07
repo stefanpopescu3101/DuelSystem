@@ -31,6 +31,7 @@ namespace DuelSysApp.GeneralForms
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnLogOutStaff = new System.Windows.Forms.Button();
             this.lbWelcome = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -40,13 +41,14 @@ namespace DuelSysApp.GeneralForms
             this.btnAddStaff = new System.Windows.Forms.Button();
             this.dtgvStaff = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnScoreTournament = new System.Windows.Forms.Button();
             this.btnLogOutTournament = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnGenerateTournament = new System.Windows.Forms.Button();
             this.btnDeleteTournament = new System.Windows.Forms.Button();
             this.btnUpdateTournament = new System.Windows.Forms.Button();
             this.btnAddTournament = new System.Windows.Forms.Button();
             this.dtgvTournament = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -83,6 +85,16 @@ namespace DuelSysApp.GeneralForms
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Staff";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(525, 17);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(94, 29);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnLogOutStaff
             // 
@@ -177,6 +189,7 @@ namespace DuelSysApp.GeneralForms
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.btnScoreTournament);
             this.tabPage2.Controls.Add(this.btnLogOutTournament);
             this.tabPage2.Controls.Add(this.groupBox2);
             this.tabPage2.Controls.Add(this.dtgvTournament);
@@ -188,6 +201,17 @@ namespace DuelSysApp.GeneralForms
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Tournament";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // btnScoreTournament
+            // 
+            this.btnScoreTournament.Location = new System.Drawing.Point(7, 429);
+            this.btnScoreTournament.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnScoreTournament.Name = "btnScoreTournament";
+            this.btnScoreTournament.Size = new System.Drawing.Size(557, 56);
+            this.btnScoreTournament.TabIndex = 8;
+            this.btnScoreTournament.Text = "SCORE THE TOURNAMENT";
+            this.btnScoreTournament.UseVisualStyleBackColor = true;
+            this.btnScoreTournament.Click += new System.EventHandler(this.btnScoreTournament_Click);
             // 
             // btnLogOutTournament
             // 
@@ -202,6 +226,7 @@ namespace DuelSysApp.GeneralForms
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnGenerateTournament);
             this.groupBox2.Controls.Add(this.btnDeleteTournament);
             this.groupBox2.Controls.Add(this.btnUpdateTournament);
             this.groupBox2.Controls.Add(this.btnAddTournament);
@@ -214,9 +239,19 @@ namespace DuelSysApp.GeneralForms
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Commands:";
             // 
+            // btnGenerateTournament
+            // 
+            this.btnGenerateTournament.Location = new System.Drawing.Point(50, 255);
+            this.btnGenerateTournament.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnGenerateTournament.Name = "btnGenerateTournament";
+            this.btnGenerateTournament.Size = new System.Drawing.Size(153, 56);
+            this.btnGenerateTournament.TabIndex = 3;
+            this.btnGenerateTournament.Text = "GENERATE TOURNAMENT";
+            this.btnGenerateTournament.UseVisualStyleBackColor = true;
+            // 
             // btnDeleteTournament
             // 
-            this.btnDeleteTournament.Location = new System.Drawing.Point(37, 235);
+            this.btnDeleteTournament.Location = new System.Drawing.Point(50, 181);
             this.btnDeleteTournament.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDeleteTournament.Name = "btnDeleteTournament";
             this.btnDeleteTournament.Size = new System.Drawing.Size(153, 56);
@@ -227,7 +262,7 @@ namespace DuelSysApp.GeneralForms
             // 
             // btnUpdateTournament
             // 
-            this.btnUpdateTournament.Location = new System.Drawing.Point(37, 156);
+            this.btnUpdateTournament.Location = new System.Drawing.Point(50, 102);
             this.btnUpdateTournament.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnUpdateTournament.Name = "btnUpdateTournament";
             this.btnUpdateTournament.Size = new System.Drawing.Size(153, 56);
@@ -238,7 +273,7 @@ namespace DuelSysApp.GeneralForms
             // 
             // btnAddTournament
             // 
-            this.btnAddTournament.Location = new System.Drawing.Point(37, 77);
+            this.btnAddTournament.Location = new System.Drawing.Point(50, 23);
             this.btnAddTournament.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAddTournament.Name = "btnAddTournament";
             this.btnAddTournament.Size = new System.Drawing.Size(153, 56);
@@ -258,16 +293,6 @@ namespace DuelSysApp.GeneralForms
             this.dtgvTournament.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvTournament.Size = new System.Drawing.Size(557, 329);
             this.dtgvTournament.TabIndex = 1;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(525, 17);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 29);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // fmManagement
             // 
@@ -310,5 +335,7 @@ namespace DuelSysApp.GeneralForms
         private System.Windows.Forms.Button btnLogOutStaff;
         private System.Windows.Forms.Button btnLogOutTournament;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnScoreTournament;
+        private System.Windows.Forms.Button btnGenerateTournament;
     }
 }

@@ -68,3 +68,5 @@ C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\D
 C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysApp\bin\Debug\netcoreapp3.1\DuelSysEntities.pdb
 C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysApp\bin\Debug\netcoreapp3.1\DuelSysManagers.pdb
 C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysApp\bin\Debug\netcoreapp3.1\DuelSysMediators.pdb
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysApp\obj\Debug\netcoreapp3.1\DuelSysApp.TournamentForms.fmScoreTournament.resources
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysApp\obj\Debug\netcoreapp3.1\DuelSysApp.TournamentForms.fmScoreRound.resources

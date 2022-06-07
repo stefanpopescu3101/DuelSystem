@@ -160,5 +160,22 @@ namespace DuelSysApp.GeneralForms
         {
             tournamentManager.GenerateTournamentStructure(1);
         }
+
+        private void btnScoreTournament_Click(object sender, EventArgs e)
+        {
+
+            if (dtgvTournament.SelectedRows.Count > -1)
+            {
+                int id = Convert.ToInt32(dtgvTournament.SelectedRows[0].Cells[0].Value);
+
+                fmScoreTournament a = new fmScoreTournament(tournamentManager.GetTournament(id));
+                a.Show();
+            }
+            else
+            {
+                MessageBox.Show("Select a tournament first!");
+            }
+            
+        }
     }
 }

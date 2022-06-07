@@ -237,13 +237,37 @@ namespace DuelSysManagers
             return enrolledPlayers;
         }
 
+        public List<Match> GetMatchesForRound(int id)
+        {
+            List<Match> allMatches = new List<Match>();
+
+            allMatches = matchManager.GetMatches();
+
+            roundMatches.Clear();
+
+            foreach(Match match in allMatches)
+            {
+                if(match.RoundID==id)
+                {
+                    roundMatches.Add(match);
+                }
+            }
+
+            return roundMatches;
+        }
+
         
+
+
+
 
         public void UpdateInfo(Tournament tournament, string sportType, string description, string startDate, string endDate, int minPlayers, int maxPlayers, string location, string status)
         {
             tournament.UpdateInfo(sportType, description, startDate, endDate, minPlayers, maxPlayers, location, status);
             mediator.UpdateInfo(tournament);
         }
+
+        
 
         public List<Tournament> SearchTournaments(string item)
         {

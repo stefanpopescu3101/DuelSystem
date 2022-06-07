@@ -35,5 +35,18 @@ namespace DuelSysManagers
             matches = matchMediator.GetMatches();
             return matches;
         }
+
+        public Match GetMatch(int id)
+        {
+            foreach (Match match in GetMatches())
+            {
+                if(match.MatchID==id)
+                {
+                    return match;
+                }
+            }
+
+            return null;
+        }
     }
 }
