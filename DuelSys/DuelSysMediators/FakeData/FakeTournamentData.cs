@@ -21,6 +21,11 @@ namespace DuelSysMediators.FakeData
 
         }
 
+        public bool AddEnrollment(EnrolledTournament tournament)
+        {
+            throw new NotImplementedException();
+        }
+
         public bool AddTournament(Tournament tournament)
         {
             return true;

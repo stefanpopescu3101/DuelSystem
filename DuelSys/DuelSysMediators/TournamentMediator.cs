@@ -213,6 +213,46 @@ namespace DuelSysMediators
 
             return players;
         }
+
+        public bool AddEnrollment(EnrolledTournament tournament)
+        {
+
+
+            if (ConnOpen())
+            {
+                try
+                {
+                    query = "INSERT INTO enroll_tournament (TournamentID, PlayerID) VALUES (@TournamentID, @PlayerID)";
+
+                    SqlQuery(query);
+
+                    AddWithValue("@TournamentID", tournament.PlayerID);
+                    AddWithValue("@PlayerID", tournament.TournamentID);
+                    
+
+
+                    NonQueryEx();
+
+                    
+
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    return false;
+
+                }
+                finally
+                {
+                    Close();
+                }
+            }
+            else
+            {
+                return false;
+            }
+
+        }
     }
 
     

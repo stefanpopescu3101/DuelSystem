@@ -12,5 +12,7 @@ namespace DuelSysMediators.Interfaces
         List<Tournament> GetTournaments();
         bool UpdateInfo(Tournament tournament);
         List<EnrolledTournament> GetEnrollings();
+        bool AddEnrollment(EnrolledTournament tournament);
+
     }
 }

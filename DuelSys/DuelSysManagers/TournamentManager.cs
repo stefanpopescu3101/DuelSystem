@@ -101,6 +101,38 @@ namespace DuelSysManagers
             return null;
         }
 
+
+        public bool AddEnrollment(EnrolledTournament tournament)
+        {
+            if (tournament != null)
+            {
+                enrolledTournaments.Add(tournament);
+                mediator.AddEnrollment(tournament);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
+        public bool PlayerAlreadyRegistered(int tournamentID, int playerID)
+        {
+            enrolledTournaments = GetEnrollingsForTournament(tournamentID);
+            
+
+            foreach(EnrolledTournament enrolledTournament in enrolledTournaments)
+            {
+                if(enrolledTournament.PlayerID==playerID)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
         public bool GenerateTournamentStructure(int id)
         {
             Tournament tournament = GetTournament(id);
