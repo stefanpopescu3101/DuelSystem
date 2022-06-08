@@ -32,7 +32,7 @@ namespace DuelSysApp.TournamentForms
                 DateTime startDate=Convert.ToDateTime(dtpStartDate.Text);
                 DateTime endDate=Convert.ToDateTime(dtpEndDate.Text);
 
-                Tournament tournament = new Tournament(cmbSportType.Text, tbDescription.Text, startDate.ToString("d"), endDate.ToString("d"), Convert.ToInt32(tbMinPlayers.Text), Convert.ToInt32(tbMaxPlayers.Text), cmbLocation.Text, cmbTournamentType.Text, "ENROLL");
+                Tournament tournament = new Tournament(cmbSportType.Text, tbDescription.Text, startDate.ToString("d"), endDate.ToString("d"), Convert.ToInt32(tbMinPlayers.Text), Convert.ToInt32(tbMaxPlayers.Text), cmbLocation.Text, cmbTournamentType.Text, 0, 0, 0, "ENROLL");
 
                 tournamentManager.AddTournament(tournament);
 

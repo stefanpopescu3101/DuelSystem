@@ -6,7 +6,7 @@ using System.Text;
 
 namespace DuelSysManagers
 {
-    public class MatchManager : IMatchData
+    public class MatchManager 
     {
         private List<Match> matches;
 
@@ -47,6 +47,12 @@ namespace DuelSysManagers
             }
 
             return null;
+        }
+
+        public void UpdateInfo(Match match, int player1Score, int player2Score, int winner)
+        {
+            match.UpdateInfo(player1Score, player2Score, winner);
+            matchMediator.UpdateInfo(match);
         }
     }
 }

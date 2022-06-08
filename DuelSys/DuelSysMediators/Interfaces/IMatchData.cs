@@ -9,6 +9,7 @@ namespace DuelSysMediators.Interfaces
     {
         List<Match> GetMatches();
         bool AddMatch(Match match);
+        bool UpdateInfo(Match match);
 
     }
 }

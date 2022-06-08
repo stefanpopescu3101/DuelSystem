@@ -15,6 +15,9 @@ namespace DuelSysEntities
         private int maxPlayers;
         private string location;
         private string tournamentType;
+        private int bronze;
+        private int silver;
+        private int gold;
         private string status;
 
         public int ID
@@ -76,9 +79,24 @@ namespace DuelSysEntities
             set { status = value; }
         }
 
+        public int Bronze
+        {
+            get { return bronze; }
+            set { bronze = value; }
+        }
 
+        public int Silver
+        {
+            get { return silver; }
+            set { silver = value; }
+        }
+        public int Gold
+        {
+            get { return gold; }
+            set { gold = value; }
+        }
 
-        public Tournament(int id, string sportType, string description, string startDate, string endDate, int minPlayers, int maxPlayers, string location, string tournamentType, string status)
+        public Tournament(int id, string sportType, string description, string startDate, string endDate, int minPlayers, int maxPlayers, string location, string tournamentType, int bronze, int silver, int gold, string status)
         {
             this.id = id;
             this.sportType = sportType;
@@ -89,11 +107,14 @@ namespace DuelSysEntities
             this.maxPlayers = maxPlayers;
             this.location = location;
             this.tournamentType = tournamentType;
+            this.bronze = bronze;
+            this.silver = silver;
+            this.gold = gold;
             this.status = status;
         }
 
 
-        public Tournament(string sportType, string description, string startDate, string endDate, int minPlayers, int maxPlayers, string location, string tournamentType, string status)
+        public Tournament(string sportType, string description, string startDate, string endDate, int minPlayers, int maxPlayers, string location, string tournamentType, int bronze, int silver, int gold, string status)
         {
             
             this.sportType = sportType;
@@ -104,6 +125,9 @@ namespace DuelSysEntities
             this.maxPlayers = maxPlayers;
             this.location = location;
             this.tournamentType = tournamentType;
+            this.bronze = bronze;
+            this.silver = silver;
+            this.gold = gold;
             this.status = status;
         }
 
@@ -118,6 +142,13 @@ namespace DuelSysEntities
             this.location = location;
             this.status = status;
             
+        }
+
+        public void UpdateRanking(int bronze, int silver, int gold)
+        {
+            this.bronze = bronze;
+            this.silver = silver;
+            this.gold = gold;
         }
     }
 }

@@ -30,6 +30,8 @@ namespace DuelSysApp.TournamentForms
 
             matches = new List<Match>();
 
+            lbRound.Text = lbRound.Text + " " + "#" + RoundID.ToString();
+
             Initializer();
         }
 
@@ -40,7 +42,11 @@ namespace DuelSysApp.TournamentForms
             List<int> matchesIDS = new List<int>();
             foreach(Match match in matches)
             {
-                matchesIDS.Add(match.MatchID);
+                if(match.Player1Score==0 && match.Player2Score==0)
+                {
+                    matchesIDS.Add(match.MatchID);
+                }
+                
             }
 
             cmbMatches.DataSource = matchesIDS;
@@ -48,7 +54,18 @@ namespace DuelSysApp.TournamentForms
         }
         private void btnMatch_Click(object sender, EventArgs e)
         {
-
+            Match match = matchManager.GetMatch(Convert.ToInt32(cmbMatches.SelectedItem));
+            int winner;
+            if(Convert.ToInt32(tbPlayer1.Text)>Convert.ToInt32(tbPlayer2.Text))
+            {
+                winner = match.Player1ID;
+            }
+            else
+            {
+                winner = match.Player2ID;
+            }
+            matchManager.UpdateInfo(match, Convert.ToInt32(tbPlayer1.Text), Convert.ToInt32(tbPlayer2.Text), winner);
+            Initializer();
         }
 
         private void cmbMatches_SelectedIndexChanged(object sender, EventArgs e)

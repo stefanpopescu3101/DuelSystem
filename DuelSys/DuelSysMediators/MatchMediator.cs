@@ -31,7 +31,7 @@ namespace DuelSysMediators
                     {
                         while (dataReader.Read())
                         {
-                            Match match = match = new Match(Convert.ToInt32(dataReader["MatchID"]), Convert.ToInt32(dataReader["RoundID"]), Convert.ToInt32(dataReader["Player1ID"]), dataReader["Player1Name"].ToString(), Convert.ToInt32(dataReader["Player2ID"]), dataReader["Player2Name"].ToString());
+                            Match match = match = new Match(Convert.ToInt32(dataReader["MatchID"]), Convert.ToInt32(dataReader["RoundID"]), Convert.ToInt32(dataReader["Player1ID"]), dataReader["Player1Name"].ToString(), Convert.ToInt32(dataReader["Player2ID"]), dataReader["Player2Name"].ToString(), Convert.ToInt32(dataReader["Player1Score"]), Convert.ToInt32(dataReader["Player2Score"]), Convert.ToInt32(dataReader["Winner"]));
 
                             matches.Add(match);
                         }
@@ -60,7 +60,7 @@ namespace DuelSysMediators
             {
                 try
                 {
-                    query = "INSERT INTO matches (MatchID, RoundID, Player1ID, Player1Name, Player2ID, Player2Name) VALUES (@MatchID, @RoundID, @Player1ID, @Player1Name, @Player2ID, @Player2Name)";
+                    query = "INSERT INTO matches (MatchID, RoundID, Player1ID, Player1Name, Player2ID, Player2Name, Winner) VALUES (@MatchID, @RoundID, @Player1ID, @Player1Name, @Player2ID, @Player2Name, @Winner)";
 
                     SqlQuery(query);
 
@@ -70,6 +70,7 @@ namespace DuelSysMediators
                     AddWithValue("@Player1Name", match.Player1Name);
                     AddWithValue("@Player2ID", match.Player2ID);
                     AddWithValue("@Player2Name", match.Player2Name);
+                    AddWithValue("@Winner", match.Winner);
 
 
                     NonQueryEx();
@@ -93,6 +94,45 @@ namespace DuelSysMediators
                 return false;
             }
 
+        }
+
+
+        public bool UpdateInfo(Match match)
+        {
+            if (ConnOpen())
+            {
+                try
+                {
+                    query = "UPDATE matches SET Player1Score=@Player1Score, Player2Score=@Player2Score, Winner=@Winner WHERE MatchID=@ID";
+
+                    SqlQuery(query);
+
+                    AddWithValue("@ID", match.MatchID);
+                    AddWithValue("@Player1Score", match.Player1Score);
+                    AddWithValue("@Player2Score", match.Player2Score);
+                    AddWithValue("@Winner", match.Winner);
+
+
+                    NonQueryEx();
+
+
+
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    return false;
+
+                }
+                finally
+                {
+                    Close();
+                }
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

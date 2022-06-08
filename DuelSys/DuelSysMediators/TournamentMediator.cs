@@ -32,7 +32,7 @@ namespace DuelSysMediators
                         {
                             Tournament doctor = doctor = new Tournament(Convert.ToInt32(dataReader["Id"]), dataReader["SportType"].ToString(), dataReader["Description"].ToString(),
                                 dataReader["StartDate"].ToString(), dataReader["EndDate"].ToString(), Convert.ToInt32(dataReader["MinPlayers"]), Convert.ToInt32(dataReader["MaxPlayers"]),
-                                dataReader["Location"].ToString(), dataReader["TournamentType"].ToString(), dataReader["Status"].ToString());
+                                dataReader["Location"].ToString(), dataReader["TournamentType"].ToString(), Convert.ToInt32(dataReader["Bronze"]), Convert.ToInt32(dataReader["Silver"]), Convert.ToInt32(dataReader["Gold"]), dataReader["Status"].ToString());
 
                             tournaments.Add(doctor);
                         }
@@ -73,6 +73,44 @@ namespace DuelSysMediators
                     AddWithValue("@Location", tournament.Location);
                     AddWithValue("@Status", tournament.Status);
                     
+
+                    NonQueryEx();
+
+
+
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    return false;
+
+                }
+                finally
+                {
+                    Close();
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool UpdateRanking(Tournament tournament)
+        {
+            if (ConnOpen())
+            {
+                try
+                {
+                    query = "UPDATE tournament SET Bronze=@Bronze, Silver=@Silver, Gold=@Gold WHERE Id=@ID";
+
+                    SqlQuery(query);
+
+                    AddWithValue("@ID", tournament.ID);
+                    AddWithValue("@Bronze", tournament.Bronze);
+                    AddWithValue("@Silver", tournament.Silver);
+                    AddWithValue("@Gold", tournament.Gold);
+
 
                     NonQueryEx();
 

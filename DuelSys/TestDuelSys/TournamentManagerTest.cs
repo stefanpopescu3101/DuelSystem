@@ -25,7 +25,7 @@ namespace TestDuelSys
         {
             //arrange
 
-            Tournament tournament = new Tournament("badminton", "It is a sport", "16/05/2022", "20/05/2022", 4, 10, "Eindhoven", "robin-rounds", "ENROLL");
+            Tournament tournament = new Tournament("badminton", "It is a sport", "16/05/2022", "20/05/2022", 4, 10, "Eindhoven", "robin-rounds", 0, 0, 0, "ENROLL");
 
 
             //act
@@ -40,7 +40,7 @@ namespace TestDuelSys
         {
             //arrange
             int success = 0;
-            Tournament tournament = new Tournament("badminton", "It is a sport", "16/05/2022", "20/05/2022", 4, 10, "Eindhoven", "robin-rounds", "ENROLL");
+            Tournament tournament = new Tournament("badminton", "It is a sport", "16/05/2022", "20/05/2022", 4, 10, "Eindhoven", "robin-rounds", 0, 0, 0, "ENROLL");
 
 
             //act
@@ -72,7 +72,7 @@ namespace TestDuelSys
         public void UpdateInfoTest()
         {
             //arrange
-            Tournament tournament = new Tournament("badminton", "It is a sport", "16/05/2022", "20/05/2022", 4, 10, "Eindhoven", "robin-rounds", "ENROLL");
+            Tournament tournament = new Tournament("badminton", "It is a sport", "16/05/2022", "20/05/2022", 4, 10, "Eindhoven", "robin-rounds", 0, 0, 0, "ENROLL");
 
 
             //act

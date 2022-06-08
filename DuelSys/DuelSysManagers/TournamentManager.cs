@@ -170,13 +170,13 @@ namespace DuelSysManagers
                 {
                     int teamIdx = round % teamSize;
 
-                    matchManager.AddMatch(new Match(rounds[round].RoundID, players[teamIdx].Id, players[teamIdx].Username,  enrolledPlayers[0].Id, enrolledPlayers[0].Username));
+                    matchManager.AddMatch(new Match(rounds[round].RoundID, players[teamIdx].Id, players[teamIdx].Username,  enrolledPlayers[0].Id, enrolledPlayers[0].Username, 0, 0, 0));
 
                     for(int idx = 1; idx < halfSize; idx++)
                     {
                         int firstTeam = (round + idx) % teamSize;
                         int secondTeam = (round + teamSize - idx) % teamSize;
-                        matchManager.AddMatch(new Match(rounds[round].RoundID, players[firstTeam].Id, players[firstTeam].Username, players[secondTeam].Id, players[secondTeam].Username));
+                        matchManager.AddMatch(new Match(rounds[round].RoundID, players[firstTeam].Id, players[firstTeam].Username, players[secondTeam].Id, players[secondTeam].Username, 0, 0, 0));
                     }
 
 
@@ -222,6 +222,7 @@ namespace DuelSysManagers
         //Gets all players objects enrolled for a specific tournament
         public List<Player> GetPlayersEnrolledForTournament(int id)
         {
+            enrolledPlayers.Clear();
 
             foreach(EnrolledTournament enrolledTournament in GetEnrollingsForTournament(id))
             {
@@ -257,7 +258,10 @@ namespace DuelSysManagers
         }
 
         
+        public void CalculateTournamentWinners()
+        {
 
+        }
 
 
 
@@ -265,6 +269,12 @@ namespace DuelSysManagers
         {
             tournament.UpdateInfo(sportType, description, startDate, endDate, minPlayers, maxPlayers, location, status);
             mediator.UpdateInfo(tournament);
+        }
+
+        public void UpdateRanking(Tournament tournament, int bronze, int silver, int gold)
+        {
+            tournament.UpdateRanking(bronze, silver, gold);
+            mediator.UpdateRanking(tournament);
         }
 
         

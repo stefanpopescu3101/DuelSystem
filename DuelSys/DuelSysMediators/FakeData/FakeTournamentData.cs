@@ -12,12 +12,12 @@ namespace DuelSysMediators.FakeData
         public FakeTournamentData()
         {
             tournaments = new List<Tournament>();
-            tournaments.Add(new Tournament("badminton", "It is a sport", "16/05/2022", "20/05/2022", 4, 10, "Eindhoven", "robin-rounds", "ENROLL"));
-            tournaments.Add(new Tournament("badminton", "It is a sport", "16/05/2022", "20/05/2022", 4, 10, "Eindhoven", "robin-rounds", "ENROLL"));
-            tournaments.Add(new Tournament("badminton", "It is a sport", "16/05/2022", "20/05/2022", 4, 10, "Eindhoven", "robin-rounds", "ENROLL"));
-            tournaments.Add(new Tournament("badminton", "It is a sport", "16/05/2022", "20/05/2022", 4, 10, "Eindhoven", "robin-rounds", "ENROLL"));
-            tournaments.Add(new Tournament("badminton", "It is a sport", "16/05/2022", "20/05/2022", 4, 10, "Eindhoven", "robin-rounds", "ENROLL"));
-            tournaments.Add(new Tournament(1, "badminton", "It is a sport", "16/05/2022", "20/05/2022", 4, 10, "Eindhoven", "robin-rounds", "ENROLL"));
+            tournaments.Add(new Tournament("badminton", "It is a sport", "16/05/2022", "20/05/2022", 4, 10, "Eindhoven", "robin-rounds", 0, 0, 0, "ENROLL"));
+            tournaments.Add(new Tournament("badminton", "It is a sport", "16/05/2022", "20/05/2022", 4, 10, "Eindhoven", "robin-rounds", 0, 0, 0, "ENROLL"));
+            tournaments.Add(new Tournament("badminton", "It is a sport", "16/05/2022", "20/05/2022", 4, 10, "Eindhoven", "robin-rounds", 0, 0, 0, "ENROLL"));
+            tournaments.Add(new Tournament("badminton", "It is a sport", "16/05/2022", "20/05/2022", 4, 10, "Eindhoven", "robin-rounds", 0, 0, 0, "ENROLL"));
+            tournaments.Add(new Tournament("badminton", "It is a sport", "16/05/2022", "20/05/2022", 4, 10, "Eindhoven", "robin-rounds", 0, 0, 0, "ENROLL"));
+            tournaments.Add(new Tournament(1, "badminton", "It is a sport", "16/05/2022", "20/05/2022", 4, 10, "Eindhoven", "robin-rounds", 0, 0, 0, "ENROLL"));
 
         }
 
@@ -54,6 +54,11 @@ namespace DuelSysMediators.FakeData
         public bool UpdateInfo(Tournament tournament)
         {
             return true;
+        }
+
+        public bool UpdateRanking(Tournament tournament)
+        {
+            throw new NotImplementedException();
         }
     }
 }

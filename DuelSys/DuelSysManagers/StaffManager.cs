@@ -7,7 +7,7 @@ using System.Text;
 
 namespace DuelSysManagers
 {
-    public class StaffManager
+    public class StaffManager 
     {
         private List<Staff> staffs;
 
@@ -91,8 +91,10 @@ namespace DuelSysManagers
 
         public void UpdateInfo(Staff staff, string firstName, string lastName, int cnp, string email, int phone, string gender, string username)
         {
-            staff.UpdateInfo(firstName, lastName, cnp, email, phone, gender, username);
-            mediator.UpdateInfo(staff);
+            
+                staff.UpdateInfo(firstName, lastName, cnp, email, phone, gender, username);
+                mediator.UpdateInfo(staff);
+                
         }
 
         public List<Staff> SearchStaffs(string item)
