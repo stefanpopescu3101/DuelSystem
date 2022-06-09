@@ -14,6 +14,7 @@ namespace DuelSysMediators.Interfaces
         List<EnrolledTournament> GetEnrollings();
         bool AddEnrollment(EnrolledTournament tournament);
         bool UpdateRanking(Tournament tournament);
+        bool UpdatePoints(EnrolledTournament enrolledTournament);
 
     }
 }

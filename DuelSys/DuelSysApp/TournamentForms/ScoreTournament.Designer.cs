@@ -31,6 +31,7 @@ namespace DuelSysApp.TournamentForms
         {
             this.pCalender = new System.Windows.Forms.Panel();
             this.lbTournament = new System.Windows.Forms.Label();
+            this.btnCalculatePoints = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // pCalender
@@ -50,11 +51,22 @@ namespace DuelSysApp.TournamentForms
             this.lbTournament.TabIndex = 10;
             this.lbTournament.Text = "Tournament";
             // 
+            // btnCalculatePoints
+            // 
+            this.btnCalculatePoints.Location = new System.Drawing.Point(12, 544);
+            this.btnCalculatePoints.Name = "btnCalculatePoints";
+            this.btnCalculatePoints.Size = new System.Drawing.Size(901, 38);
+            this.btnCalculatePoints.TabIndex = 11;
+            this.btnCalculatePoints.Text = "Calculate Points";
+            this.btnCalculatePoints.UseVisualStyleBackColor = true;
+            this.btnCalculatePoints.Click += new System.EventHandler(this.btnCalculatePoints_Click);
+            // 
             // fmScoreTournament
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(939, 545);
+            this.ClientSize = new System.Drawing.Size(939, 594);
+            this.Controls.Add(this.btnCalculatePoints);
             this.Controls.Add(this.lbTournament);
             this.Controls.Add(this.pCalender);
             this.Name = "fmScoreTournament";
@@ -68,5 +80,6 @@ namespace DuelSysApp.TournamentForms
 
         private System.Windows.Forms.Panel pCalender;
         private System.Windows.Forms.Label lbTournament;
+        private System.Windows.Forms.Button btnCalculatePoints;
     }
 }

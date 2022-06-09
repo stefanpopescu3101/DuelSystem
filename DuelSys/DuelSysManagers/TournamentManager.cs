@@ -257,10 +257,63 @@ namespace DuelSysManagers
             return roundMatches;
         }
 
-        
-        public void CalculateTournamentWinners()
+        public List<Match> GetMatchesForTournament(int tournamentID)
         {
+            List<Match> allMatches = new List<Match>();
 
+            allMatches = matchManager.GetMatches();
+
+            List<Round> rounds = new List<Round>();
+
+            rounds = roundManager.GetRoundsForTournament(tournamentID);
+
+            foreach (Round round in rounds)
+            {
+                foreach(Match match in allMatches)
+                {
+                    if (match.RoundID == round.RoundID)
+                    {
+                        roundMatches.Add(match);
+                    }
+                }
+                
+            }
+
+            return roundMatches;
+        }
+
+
+        public void CalculateRankingWinners(int tournamentID)
+        {
+            List<Round> rounds = new List<Round>();
+            rounds = roundManager.GetRoundsForTournament(tournamentID);
+            roundMatches = GetMatchesForTournament(tournamentID);
+
+            foreach(EnrolledTournament enrolledTournament in GetEnrollingsForTournament(tournamentID))
+            {
+
+            }
+
+        }
+
+        public void CalculatePlayersPointsForTournament(int tournamentID)
+        {
+            int points=0;
+
+            foreach (EnrolledTournament enrolledTournament in GetEnrollingsForTournament(tournamentID))
+            {
+                
+                foreach(Match match in GetMatchesForTournament(tournamentID))
+                {
+                    if(match.Winner==enrolledTournament.PlayerID)
+                    {
+                        points++;
+                    }
+                }
+
+                UpdatePoints(enrolledTournament, points);
+                points = 0;
+            }
         }
 
 
@@ -277,7 +330,11 @@ namespace DuelSysManagers
             mediator.UpdateRanking(tournament);
         }
 
-        
+        public void UpdatePoints(EnrolledTournament enrolledTournament, int points)
+        {
+            enrolledTournament.UpdatePoints(points);
+            mediator.UpdatePoints(enrolledTournament);
+        }
 
         public List<Tournament> SearchTournaments(string item)
         {

@@ -230,7 +230,7 @@ namespace DuelSysMediators
                     MySqlDataReader dt = command.ExecuteReader();
                     while (dt.Read())
                     {
-                        EnrolledTournament player = new EnrolledTournament(Convert.ToInt32(dt["TournamentID"]), Convert.ToInt32(dt["PlayerID"]));
+                        EnrolledTournament player = new EnrolledTournament(Convert.ToInt32(dt["TournamentID"]), Convert.ToInt32(dt["PlayerID"]), Convert.ToInt32(dt["Points"]), Convert.ToInt32(dt["Rank"]));
                         players.Add(player);
                     }
 
@@ -260,13 +260,15 @@ namespace DuelSysMediators
             {
                 try
                 {
-                    query = "INSERT INTO enroll_tournament (TournamentID, PlayerID) VALUES (@TournamentID, @PlayerID)";
+                    query = "INSERT INTO enroll_tournament (TournamentID, PlayerID, Points, Rank) VALUES (@TournamentID, @PlayerID, @Points, @Rank)";
 
                     SqlQuery(query);
 
                     AddWithValue("@TournamentID", tournament.PlayerID);
                     AddWithValue("@PlayerID", tournament.TournamentID);
-                    
+                    AddWithValue("@Points", tournament.Points);
+                    AddWithValue("@Rank", tournament.Rank);
+
 
 
                     NonQueryEx();
@@ -290,6 +292,43 @@ namespace DuelSysMediators
                 return false;
             }
 
+        }
+
+        public bool UpdatePoints(EnrolledTournament enrolledTournament)
+        {
+            if (ConnOpen())
+            {
+                try
+                {
+                    query = "UPDATE enroll_tournament SET Points=@Points WHERE PlayerID=@PlayerID";
+
+                    SqlQuery(query);
+
+                    AddWithValue("@PlayerID", enrolledTournament.PlayerID);
+                    AddWithValue("@Points", enrolledTournament.Points);
+                    
+
+
+                    NonQueryEx();
+
+
+
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    return false;
+
+                }
+                finally
+                {
+                    Close();
+                }
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 

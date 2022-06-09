@@ -10,6 +10,10 @@ namespace DuelSysEntities
 
         private int playerID;
 
+        private int points;
+
+        private int rank;
+
         public int TournamentID
         {
             get { return tournamentID; }
@@ -20,10 +24,29 @@ namespace DuelSysEntities
             get { return playerID; }
         }
 
-        public EnrolledTournament(int tournamentID ,int playerID)
+        public int Points
+        {
+            get { return points; }
+            set { points = value; }
+        }
+
+        public int Rank
+        {
+            get { return rank; }
+            set { rank = value; }
+        }
+
+        public EnrolledTournament(int tournamentID ,int playerID, int points, int rank)
         {
             this.tournamentID = tournamentID;
             this.playerID = playerID;
+            this.points = points;
+            this.rank=rank;
+        }
+
+        public void UpdatePoints(int points)
+        {
+            this.points = points;
         }
     }
 }
