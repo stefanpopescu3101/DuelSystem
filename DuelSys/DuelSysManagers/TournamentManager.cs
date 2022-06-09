@@ -102,7 +102,7 @@ namespace DuelSysManagers
         }
 
 
-        public bool AddEnrollment(EnrolledTournament tournament)
+        public bool AddEnrollment(EnrolledTournament tournament)/// manager
         {
             if (tournament != null)
             {
@@ -115,6 +115,21 @@ namespace DuelSysManagers
                 return false;
             }
 
+        }
+
+        public EnrolledTournament GetEnrolled(int playerID, int tournamentID)
+        {
+            enrolledTournaments = GetEnrollingsForTournament(tournamentID);
+
+            foreach(EnrolledTournament enrolledTournament in enrolledTournaments)
+            {
+                if(enrolledTournament.PlayerID==playerID)
+                {
+                    return enrolledTournament;
+                }
+            }
+
+            return null;
         }
 
         public bool PlayerAlreadyRegistered(int tournamentID, int playerID)
@@ -285,25 +300,65 @@ namespace DuelSysManagers
 
         public void CalculateRankingWinners(int tournamentID)
         {
-            List<Round> rounds = new List<Round>();
-            rounds = roundManager.GetRoundsForTournament(tournamentID);
-            roundMatches = GetMatchesForTournament(tournamentID);
+            List<EnrolledTournament> enrolledTournamentRanks = new List<EnrolledTournament>();
 
-            foreach(EnrolledTournament enrolledTournament in GetEnrollingsForTournament(tournamentID))
+            enrolledTournamentRanks = GetEnrollingsForTournament(tournamentID);
+
+            enrolledTournaments = GetEnrollingsForTournament(tournamentID);
+
+            int max = 0;
+            int listLenght = enrolledTournamentRanks.Count;
+
+            for(int i=1;i<= listLenght;i++)
             {
+                foreach (EnrolledTournament enrolledTournament in enrolledTournamentRanks)
+                {
+                    if (enrolledTournament.Points > max)
+                    {
+                        max = enrolledTournament.Points;
+                    }
+                }
 
+                EnrolledTournament enrolledTournamentWinner = new EnrolledTournament(1, 1, 1, 1);
+                //int encounters = 0;
+
+                foreach (EnrolledTournament enrolledTournament1 in enrolledTournamentRanks)
+                {
+                   
+                    if(enrolledTournament1.Points==max)
+                    {
+
+                        //encounters++;
+                        enrolledTournamentWinner = enrolledTournament1;
+                        UpdateRank(enrolledTournamentWinner, i);
+                    }
+                }
+
+                
+                enrolledTournamentRanks.Remove(enrolledTournamentWinner);
+                max = 0;
             }
+
+            
+
+
 
         }
 
-        public void CalculatePlayersPointsForTournament(int tournamentID)
+        public void CalculatePlayersPointsAndRankingForTournament(int tournamentID)
         {
             int points=0;
 
-            foreach (EnrolledTournament enrolledTournament in GetEnrollingsForTournament(tournamentID))
+            List<EnrolledTournament> tournamentEnrollings = new List<EnrolledTournament>();
+            tournamentEnrollings = GetEnrollingsForTournament(tournamentID);
+
+            List<Match> matchesForTournament = new List<Match>();
+            matchesForTournament = GetMatchesForTournament(tournamentID);
+
+            foreach (EnrolledTournament enrolledTournament in tournamentEnrollings)
             {
                 
-                foreach(Match match in GetMatchesForTournament(tournamentID))
+                foreach(Match match in matchesForTournament)
                 {
                     if(match.Winner==enrolledTournament.PlayerID)
                     {
@@ -314,6 +369,8 @@ namespace DuelSysManagers
                 UpdatePoints(enrolledTournament, points);
                 points = 0;
             }
+
+            CalculateRankingWinners(tournamentID);
         }
 
 
@@ -334,6 +391,12 @@ namespace DuelSysManagers
         {
             enrolledTournament.UpdatePoints(points);
             mediator.UpdatePoints(enrolledTournament);
+        }
+
+        public void UpdateRank(EnrolledTournament enrolledTournament, int rank)
+        {
+            enrolledTournament.UpdateRank(rank);
+            mediator.UpdateRank(enrolledTournament);
         }
 
         public List<Tournament> SearchTournaments(string item)

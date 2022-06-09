@@ -86,7 +86,7 @@ namespace DuelSysApp.TournamentForms
 
         private void btnCalculatePoints_Click(object sender, EventArgs e)
         {
-            tournamentManager.CalculatePlayersPointsForTournament(TournamentID);
+            tournamentManager.CalculatePlayersPointsAndRankingForTournament(TournamentID);
             MessageBox.Show("The points have been calculated successfuly!");
         }
     }

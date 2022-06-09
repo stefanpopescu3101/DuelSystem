@@ -48,5 +48,10 @@ namespace DuelSysEntities
         {
             this.points = points;
         }
+
+        public void UpdateRank(int rank)
+        {
+            this.rank = rank;
+        }
     }
 }

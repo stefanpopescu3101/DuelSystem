@@ -156,10 +156,7 @@ namespace DuelSysApp.GeneralForms
             a.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            tournamentManager.GenerateTournamentStructure(1);
-        }
+        
 
         private void btnScoreTournament_Click(object sender, EventArgs e)
         {
@@ -176,6 +173,11 @@ namespace DuelSysApp.GeneralForms
                 MessageBox.Show("Select a tournament first!");
             }
             
+        }
+
+        private void btnGenerateTournament_Click(object sender, EventArgs e)
+        {
+            tournamentManager.GenerateTournamentStructure(Convert.ToInt32(dtgvTournament.SelectedRows[0].Cells[0].Value));
         }
     }
 }

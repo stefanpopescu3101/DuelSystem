@@ -330,6 +330,43 @@ namespace DuelSysMediators
                 return false;
             }
         }
+
+        public bool UpdateRank(EnrolledTournament enrolledTournament)
+        {
+            if (ConnOpen())
+            {
+                try
+                {
+                    query = "UPDATE enroll_tournament SET Rank=@Rank WHERE PlayerID=@PlayerID";
+
+                    SqlQuery(query);
+
+                    AddWithValue("@PlayerID", enrolledTournament.PlayerID);
+                    AddWithValue("@Rank", enrolledTournament.Rank);
+
+
+
+                    NonQueryEx();
+
+
+
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    return false;
+
+                }
+                finally
+                {
+                    Close();
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 
     

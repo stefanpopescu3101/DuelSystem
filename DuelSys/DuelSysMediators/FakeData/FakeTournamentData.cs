@@ -61,6 +61,11 @@ namespace DuelSysMediators.FakeData
             throw new NotImplementedException();
         }
 
+        public bool UpdateRank(EnrolledTournament enrolledTournament)
+        {
+            throw new NotImplementedException();
+        }
+
         public bool UpdateRanking(Tournament tournament)
         {
             throw new NotImplementedException();
