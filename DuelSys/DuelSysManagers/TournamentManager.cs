@@ -102,12 +102,18 @@ namespace DuelSysManagers
         }
 
 
-        public bool AddEnrollment(EnrolledTournament tournament)/// manager
+        public bool AddEnrollment(EnrolledTournament enrolledTournament)/// manager
         {
-            if (tournament != null)
+            Tournament tournament = GetTournament(enrolledTournament.TournamentID);
+            
+            if (enrolledTournament != null)
             {
-                enrolledTournaments.Add(tournament);
-                mediator.AddEnrollment(tournament);
+                enrolledTournaments.Add(enrolledTournament);
+                mediator.AddEnrollment(enrolledTournament);
+                if (GetEnrollingsForTournament(enrolledTournament.TournamentID).Count == tournament.MaxPlayers)
+                {
+                    UpdateStatus(tournament, "LOCKED");
+                }
                 return true;
             }
             else
@@ -152,7 +158,7 @@ namespace DuelSysManagers
         {
             Tournament tournament = GetTournament(id);
 
-            if (tournament.Status=="ENROLL")
+            if (tournament.Status=="LOCKED")
             {
                 enrolledPlayers = GetPlayersEnrolledForTournament(id);
 
@@ -345,32 +351,90 @@ namespace DuelSysManagers
 
         }
 
-        public void CalculatePlayersPointsAndRankingForTournament(int tournamentID)
+        public bool CalculatePlayersPointsAndRankingForTournament(int tournamentID)
         {
-            int points=0;
-
-            List<EnrolledTournament> tournamentEnrollings = new List<EnrolledTournament>();
-            tournamentEnrollings = GetEnrollingsForTournament(tournamentID);
-
             List<Match> matchesForTournament = new List<Match>();
+
+            bool matchesCompleted = true;
+
             matchesForTournament = GetMatchesForTournament(tournamentID);
 
-            foreach (EnrolledTournament enrolledTournament in tournamentEnrollings)
+            foreach(Match match1 in matchesForTournament)
             {
-                
-                foreach(Match match in matchesForTournament)
+                if(match1.Player1Score==0 || match1.Player2Score==0)
                 {
-                    if(match.Winner==enrolledTournament.PlayerID)
+                    matchesCompleted = false;
+                }
+            }
+
+            if(matchesCompleted == true)
+            {
+                int points = 0;
+
+                List<EnrolledTournament> tournamentEnrollings = new List<EnrolledTournament>();
+                tournamentEnrollings = GetEnrollingsForTournament(tournamentID);
+
+
+                matchesForTournament = GetMatchesForTournament(tournamentID);
+
+                foreach (EnrolledTournament enrolledTournament in tournamentEnrollings)
+                {
+
+                    foreach (Match match in matchesForTournament)
                     {
-                        points++;
+                        if (match.Winner == enrolledTournament.PlayerID)
+                        {
+                            points++;
+                        }
+                    }
+
+                    UpdatePoints(enrolledTournament, points);
+                    points = 0;
+                }
+
+                CalculateRankingWinners(tournamentID);
+                CalculateTournamentWinners(tournamentID);
+                return true;
+            }
+
+            return false;
+            
+        }
+
+        public void CalculateTournamentWinners(int tournamentID)
+        {
+            if(GetTournament(tournamentID).Status=="FINISHED")
+            {
+                int bronze = 0;
+                int silver = 0;
+                int gold = 0;
+
+
+                foreach (EnrolledTournament enrolledTournament in GetEnrollingsForTournament(tournamentID))
+                {
+                    if (enrolledTournament.Rank == 1)
+                    {
+                        gold = enrolledTournament.PlayerID;
+                    }
+
+                    if (enrolledTournament.Rank == 2)
+                    {
+                        silver = enrolledTournament.PlayerID;
+                    }
+
+                    if (enrolledTournament.Rank == 3)
+                    {
+                        bronze = enrolledTournament.PlayerID;
                     }
                 }
 
-                UpdatePoints(enrolledTournament, points);
-                points = 0;
+                UpdateRanking(GetTournament(tournamentID), bronze, silver, gold);
+
+                
             }
 
-            CalculateRankingWinners(tournamentID);
+            
+
         }
 
 
@@ -397,6 +461,12 @@ namespace DuelSysManagers
         {
             enrolledTournament.UpdateRank(rank);
             mediator.UpdateRank(enrolledTournament);
+        }
+
+        public void UpdateStatus(Tournament tournament, string status)
+        {
+            tournament.UpdateStatus(status);
+            mediator.UpdateStatus(tournament);
         }
 
         public List<Tournament> SearchTournaments(string item)

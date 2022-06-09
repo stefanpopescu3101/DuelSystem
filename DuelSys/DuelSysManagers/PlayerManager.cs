@@ -65,6 +65,18 @@ namespace DuelSysManagers
             return null;
         }
 
+        public Player GetPlayerByID(int id)
+        {
+            foreach (Player player in GetAllPlayers())
+            {
+                if (player.Id == id)
+                {
+                    return player;
+                }
+            }
+            return null;
+        }
+
         public List<Player> GetAllPlayers()
         {
             players = playerMediator.GetPlayers();

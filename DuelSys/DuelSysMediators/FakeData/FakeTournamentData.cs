@@ -70,5 +70,10 @@ namespace DuelSysMediators.FakeData
         {
             throw new NotImplementedException();
         }
+
+        public bool UpdateStatus(Tournament tournament)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

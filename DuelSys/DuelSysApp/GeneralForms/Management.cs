@@ -177,7 +177,15 @@ namespace DuelSysApp.GeneralForms
 
         private void btnGenerateTournament_Click(object sender, EventArgs e)
         {
-            tournamentManager.GenerateTournamentStructure(Convert.ToInt32(dtgvTournament.SelectedRows[0].Cells[0].Value));
+            if(tournamentManager.GetTournament(Convert.ToInt32(dtgvTournament.SelectedRows[0].Cells[0].Value)).Status=="LOCKED")
+            {
+                tournamentManager.GenerateTournamentStructure(Convert.ToInt32(dtgvTournament.SelectedRows[0].Cells[0].Value));
+            }
+            else
+            {
+                MessageBox.Show("Tournament is not locked yet! Lock the tournament before proceeding.");
+            }
+            
         }
     }
 }

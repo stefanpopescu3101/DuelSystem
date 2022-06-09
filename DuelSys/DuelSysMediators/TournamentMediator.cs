@@ -134,6 +134,43 @@ namespace DuelSysMediators
             }
         }
 
+        public bool UpdateStatus(Tournament tournament)
+        {
+            if (ConnOpen())
+            {
+                try
+                {
+                    query = "UPDATE tournament SET Status=@Status WHERE Id=@ID";
+
+                    SqlQuery(query);
+
+                    AddWithValue("@ID", tournament.ID);
+                    AddWithValue("@Status", tournament.Status);
+                    
+
+
+                    NonQueryEx();
+
+
+
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    return false;
+
+                }
+                finally
+                {
+                    Close();
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public bool AddTournament(Tournament tournament)
         {
 

@@ -150,5 +150,10 @@ namespace DuelSysEntities
             this.silver = silver;
             this.gold = gold;
         }
+
+        public void UpdateStatus(string status)
+        {
+            this.status = status;
+        }
     }
 }

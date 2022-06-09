@@ -120,6 +120,12 @@
                         <button disabled class="member-complaint-buttons" asp-page-handler="Add" asp-route-id="@item.ID">Enrolled Already</button>
                     </form>
                 }
+                else if ((Convert.ToDateTime(item.StartDate) - DateTime.Now).Days < 7)
+                {
+                    <form method="post" asp-route-id="@item.ID">
+                        <button class="member-complaint-buttons" asp-page-handler="Add" asp-route-id="@item.ID">Enroll Time Over</button>
+                    </form>
+                }
                 else
                 {
                     <form method="post" asp-route-id="@item.ID">

@@ -16,5 +16,6 @@ namespace DuelSysMediators.Interfaces
         bool UpdateRanking(Tournament tournament);
         bool UpdatePoints(EnrolledTournament enrolledTournament);
         bool UpdateRank(EnrolledTournament enrolledTournament);
+        bool UpdateStatus(Tournament tournament);
     }
 }
