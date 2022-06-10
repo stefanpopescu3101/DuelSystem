@@ -179,7 +179,7 @@ namespace DuelSysMediators
             {
                 try
                 {
-                    query = "INSERT INTO tournament (Id, SportType, Description, StartDate , EndDate, MinPlayers, MaxPlayers, Location, TournamentType, Status) VALUES (@ID, @SportType, @Description, @StartDate, @EndDate, @MinPlayers, @MaxPlayers, @Location, @TournamentType, @Status)";
+                    query = "INSERT INTO tournament (Id, SportType, Description, StartDate , EndDate, MinPlayers, MaxPlayers, Location, TournamentType, Bronze, Silver, Gold, Status) VALUES (@ID, @SportType, @Description, @StartDate, @EndDate, @MinPlayers, @MaxPlayers, @Location, @TournamentType, @Bronze, @Silver, @Gold, @Status)";
 
                     SqlQuery(query);
 
@@ -192,6 +192,9 @@ namespace DuelSysMediators
                     AddWithValue("@MaxPlayers", tournament.MaxPlayers);
                     AddWithValue("@Location", tournament.Location);
                     AddWithValue("@TournamentType", tournament.TournamentType);
+                    AddWithValue("@Bronze", tournament.Bronze);
+                    AddWithValue("@Silver", tournament.Silver);
+                    AddWithValue("@Gold", tournament.Gold);
                     AddWithValue("@Status", tournament.Status);
                     
 

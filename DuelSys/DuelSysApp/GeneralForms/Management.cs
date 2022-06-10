@@ -165,8 +165,18 @@ namespace DuelSysApp.GeneralForms
             {
                 int id = Convert.ToInt32(dtgvTournament.SelectedRows[0].Cells[0].Value);
 
-                fmScoreTournament a = new fmScoreTournament(tournamentManager.GetTournament(id));
-                a.Show();
+                if(tournamentManager.GetTournament(id).TournamentType=="robin-round")
+                {
+                    fmScoreTournament a = new fmScoreTournament(tournamentManager.GetTournament(id));
+                    a.Show();
+                }
+                else
+                {
+                    fmScoreDoubleTournament a = new fmScoreDoubleTournament(tournamentManager.GetTournament(id));
+                    a.Show();
+                }
+
+                
             }
             else
             {
@@ -179,7 +189,15 @@ namespace DuelSysApp.GeneralForms
         {
             if(tournamentManager.GetTournament(Convert.ToInt32(dtgvTournament.SelectedRows[0].Cells[0].Value)).Status=="LOCKED")
             {
-                tournamentManager.GenerateTournamentStructure(Convert.ToInt32(dtgvTournament.SelectedRows[0].Cells[0].Value));
+                if(tournamentManager.GetTournament(Convert.ToInt32(dtgvTournament.SelectedRows[0].Cells[0].Value)).TournamentType=="round-robin")
+                {
+                    tournamentManager.GenerateTournamentStructure(Convert.ToInt32(dtgvTournament.SelectedRows[0].Cells[0].Value));
+                }
+                else if (tournamentManager.GetTournament(Convert.ToInt32(dtgvTournament.SelectedRows[0].Cells[0].Value)).TournamentType == "double-round-robin")
+                {
+                    tournamentManager.GenerateDoubleMatchTournamentStructure(Convert.ToInt32(dtgvTournament.SelectedRows[0].Cells[0].Value));
+                }
+                
             }
             else
             {

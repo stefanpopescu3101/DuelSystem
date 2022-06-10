@@ -48,6 +48,7 @@ namespace DuelSysApp.TournamentForms
             this.lbRound.Size = new System.Drawing.Size(73, 25);
             this.lbRound.TabIndex = 0;
             this.lbRound.Text = "Round:";
+            this.lbRound.Click += new System.EventHandler(this.lbRound_Click);
             // 
             // lbPlayer2
             // 
@@ -57,6 +58,7 @@ namespace DuelSysApp.TournamentForms
             this.lbPlayer2.Size = new System.Drawing.Size(64, 20);
             this.lbPlayer2.TabIndex = 1;
             this.lbPlayer2.Text = "Player 2:";
+            this.lbPlayer2.Click += new System.EventHandler(this.lbPlayer2_Click);
             // 
             // lbPlayer1
             // 
@@ -66,6 +68,7 @@ namespace DuelSysApp.TournamentForms
             this.lbPlayer1.Size = new System.Drawing.Size(64, 20);
             this.lbPlayer1.TabIndex = 2;
             this.lbPlayer1.Text = "Player 1:";
+            this.lbPlayer1.Click += new System.EventHandler(this.lbPlayer1_Click);
             // 
             // cmbMatches
             // 
@@ -82,6 +85,7 @@ namespace DuelSysApp.TournamentForms
             this.tbPlayer1.Name = "tbPlayer1";
             this.tbPlayer1.Size = new System.Drawing.Size(169, 27);
             this.tbPlayer1.TabIndex = 4;
+            this.tbPlayer1.TextChanged += new System.EventHandler(this.tbPlayer1_TextChanged);
             // 
             // tbPlayer2
             // 
@@ -89,6 +93,7 @@ namespace DuelSysApp.TournamentForms
             this.tbPlayer2.Name = "tbPlayer2";
             this.tbPlayer2.Size = new System.Drawing.Size(169, 27);
             this.tbPlayer2.TabIndex = 5;
+            this.tbPlayer2.TextChanged += new System.EventHandler(this.tbPlayer2_TextChanged);
             // 
             // btnMatch
             // 
@@ -108,6 +113,7 @@ namespace DuelSysApp.TournamentForms
             this.label1.Size = new System.Drawing.Size(61, 20);
             this.label1.TabIndex = 7;
             this.label1.Text = "MATCH:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // fmScoreRound
             // 

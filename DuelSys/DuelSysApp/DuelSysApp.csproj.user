@@ -16,6 +16,12 @@
     <Compile Update="StaffForms\UpdateStaff.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="TournamentForms\ScoreDoubleRound.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="TournamentForms\ScoreDoubleTournament.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="TournamentForms\ScoreRound.cs">
       <SubType>Form</SubType>
     </Compile>

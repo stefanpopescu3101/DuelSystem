@@ -20,6 +20,8 @@ namespace DuelSysManagers
 
         private List<Match> roundMatches;
 
+        private List<DoubleGameMatch> roundDoubleGameMatches;
+
         private ITournamentData mediator;
 
         private PlayerManager playerManager;
@@ -28,6 +30,8 @@ namespace DuelSysManagers
 
         private MatchManager matchManager;
 
+        private DoubleGameMatchManager doubleGameMatchManager;
+
         public TournamentManager(ITournamentData src)
         {
             tournaments = new List<Tournament>();
@@ -35,10 +39,12 @@ namespace DuelSysManagers
             enrolledTournaments = new List<EnrolledTournament>();
             tournamentRounds = new List<Round>();
             roundMatches = new List<Match>();
+            roundDoubleGameMatches = new List<DoubleGameMatch>();
 
             playerManager = new PlayerManager(new PlayerMediator());
             roundManager = new RoundManager(new RoundMediator());
             matchManager = new MatchManager(new MatchMediator());
+            doubleGameMatchManager = new DoubleGameMatchManager(new DoubleGameMatchMediator());
 
             mediator = src;
         }
@@ -144,15 +150,15 @@ namespace DuelSysManagers
 
         public bool AddEnrollment(EnrolledTournament enrolledTournament)/// manager
         {
-            Tournament tournament = GetTournament(enrolledTournament.TournamentID);
+            
             
             if (enrolledTournament != null)
             {
                 enrolledTournaments.Add(enrolledTournament);
                 mediator.AddEnrollment(enrolledTournament);
-                if (GetEnrollingsForTournament(enrolledTournament.TournamentID).Count == tournament.MaxPlayers)
+                if (GetEnrollingsForTournament(enrolledTournament.TournamentID).Count == GetTournament(enrolledTournament.TournamentID).MaxPlayers)
                 {
-                    UpdateStatus(tournament, "LOCKED");
+                    UpdateStatus(GetTournament(enrolledTournament.TournamentID), "LOCKED");
                 }
                 return true;
             }
@@ -189,6 +195,74 @@ namespace DuelSysManagers
                 {
                     return true;
                 }
+            }
+
+            return false;
+        }
+
+        public bool GenerateDoubleMatchTournamentStructure(int id)
+        {
+            Tournament tournament = GetTournament(id);
+
+            if (tournament.Status == "LOCKED")
+            {
+                enrolledPlayers = GetPlayersEnrolledForTournament(id);
+
+                if (enrolledPlayers.Count % 2 != 0)
+                {
+                    enrolledPlayers.Add(new Player("Dummy", "ssss"));
+                }
+
+                int numRounds = (enrolledPlayers.Count - 1);
+
+                for (int i = 0; i < numRounds; i++)
+                {
+                    roundManager.AddRound(new Round(id, false, i));
+                }
+
+                List<Round> rounds = new List<Round>();
+                rounds = roundManager.GetRoundsForTournament(id);
+
+                int halfSize = enrolledPlayers.Count / 2;
+
+                List<Player> players = new List<Player>();
+
+
+                players.AddRange(enrolledPlayers.Skip(halfSize).Take(halfSize));
+                players.AddRange(enrolledPlayers.Skip(1).Take(halfSize - 1).ToArray().Reverse());
+
+                int teamSize = players.Count;
+
+                for (int round = 0; round < numRounds; round++)
+                {
+                    int teamIdx = round % teamSize;
+
+                    doubleGameMatchManager.AddDoubleGameMatch(new DoubleGameMatch(rounds[round].RoundID, players[teamIdx].Id, players[teamIdx].Username, enrolledPlayers[0].Id, enrolledPlayers[0].Username, 0, 0, 0, 0, 0));
+
+                    for (int idx = 1; idx < halfSize; idx++)
+                    {
+                        int firstTeam = (round + idx) % teamSize;
+                        int secondTeam = (round + teamSize - idx) % teamSize;
+                        doubleGameMatchManager.AddDoubleGameMatch(new DoubleGameMatch(rounds[round].RoundID, players[firstTeam].Id, players[firstTeam].Username, players[secondTeam].Id, players[secondTeam].Username, 0, 0, 0 ,0, 0));
+                    }
+
+
+                }
+
+                //roundManager.AddRound(new Round(id, false));
+                //roundManager.AddRound(new Round(id, false));
+                //roundManager.AddRound(new Round(id, false));
+
+                //foreach(Round round in roundManager.GetRoundsForTournament(id))
+                //{
+                //    for(int i=0; i<enrolledPlayers.Count;i+=2)
+                //    {
+                //        matchManager.AddMatch(new Match(round.RoundID, enrolledPlayers[i].Id, enrolledPlayers[i].Username, enrolledPlayers[i + 1].Id, enrolledPlayers[i + 1].Username));
+                //    }
+                //}
+                //return true;
+
+                return true;
             }
 
             return false;
@@ -318,9 +392,30 @@ namespace DuelSysManagers
             return roundMatches;
         }
 
+        public List<DoubleGameMatch> GetDoubleGameMatchesForRound(int id)
+        {
+            List<DoubleGameMatch> allMatches = new List<DoubleGameMatch>();
+
+            allMatches = doubleGameMatchManager.GetDoubleGameMatches();
+
+            roundDoubleGameMatches.Clear();
+
+            foreach(DoubleGameMatch doubleGameMatch in allMatches)
+            {
+                if(doubleGameMatch.RoundID==id)
+                {
+                    roundDoubleGameMatches.Add(doubleGameMatch);
+                }
+            }
+
+            return roundDoubleGameMatches;
+        }
+
         public List<Match> GetMatchesForTournament(int tournamentID)
         {
             List<Match> allMatches = new List<Match>();
+
+            roundMatches.Clear();
 
             allMatches = matchManager.GetMatches();
 
@@ -341,6 +436,33 @@ namespace DuelSysManagers
             }
 
             return roundMatches;
+        }
+
+
+        public List<DoubleGameMatch> GetDoubleGameMatchesForTournament(int tournamentID)
+        {
+            List<DoubleGameMatch> allMatches = new List<DoubleGameMatch>();
+
+            allMatches = doubleGameMatchManager.GetDoubleGameMatches();
+
+            roundDoubleGameMatches.Clear();
+
+            List<Round> rounds = new List<Round>();
+
+            rounds = roundManager.GetRoundsForTournament(tournamentID);
+
+            foreach(Round round in rounds)
+            {
+                foreach(DoubleGameMatch doubleGameMatch in allMatches)
+                {
+                    if(doubleGameMatch.RoundID == round.RoundID)
+                    {
+                        roundDoubleGameMatches.Add(doubleGameMatch);
+                    }
+                }
+            }
+
+            return roundDoubleGameMatches;
         }
 
 
@@ -395,49 +517,105 @@ namespace DuelSysManagers
         {
             List<Match> matchesForTournament = new List<Match>();
 
+            List<DoubleGameMatch> doubleGameMatchesForTournament = new List<DoubleGameMatch>();
+
             bool matchesCompleted = true;
 
             matchesForTournament = GetMatchesForTournament(tournamentID);
 
-            foreach(Match match1 in matchesForTournament)
+            doubleGameMatchesForTournament = GetDoubleGameMatchesForTournament(tournamentID);
+
+            if(GetTournament(tournamentID).TournamentType=="round-robin")
             {
-                if(match1.Player1Score==0 || match1.Player2Score==0)
+                foreach (Match match1 in matchesForTournament)
                 {
-                    matchesCompleted = false;
+                    if (match1.Player1Score == 0 || match1.Player2Score == 0)
+                    {
+                        matchesCompleted = false;
+                    }
+                }
+            }else if(GetTournament(tournamentID).TournamentType == "double-round-robin")
+            {
+                foreach(DoubleGameMatch doubleGameMatch1 in doubleGameMatchesForTournament)
+                {
+                    if(doubleGameMatch1.Player1Match1Score==0 || doubleGameMatch1.Player1Match2Score==0 || doubleGameMatch1.Player2Match1Score==0 || doubleGameMatch1.Player2Match2Score==0)
+                    {
+                        matchesCompleted = false;
+                    }
                 }
             }
 
-            if(matchesCompleted == true)
+            if(GetTournament(tournamentID).TournamentType=="round-robin")
             {
-                int points = 0;
-
-                List<EnrolledTournament> tournamentEnrollings = new List<EnrolledTournament>();
-                tournamentEnrollings = GetEnrollingsForTournament(tournamentID);
-
-
-                matchesForTournament = GetMatchesForTournament(tournamentID);
-
-                foreach (EnrolledTournament enrolledTournament in tournamentEnrollings)
+                if (matchesCompleted == true)
                 {
+                    int points = 0;
 
-                    foreach (Match match in matchesForTournament)
+                    List<EnrolledTournament> tournamentEnrollings = new List<EnrolledTournament>();
+                    tournamentEnrollings = GetEnrollingsForTournament(tournamentID);
+
+
+                    matchesForTournament = GetMatchesForTournament(tournamentID);
+
+                    foreach (EnrolledTournament enrolledTournament in tournamentEnrollings)
                     {
-                        if (match.Winner == enrolledTournament.PlayerID)
+
+                        foreach (Match match in matchesForTournament)
                         {
-                            points++;
+                            if (match.Winner == enrolledTournament.PlayerID)
+                            {
+                                points++;
+                            }
                         }
+
+                        UpdatePoints(enrolledTournament, points);
+                        points = 0;
                     }
 
-                    UpdatePoints(enrolledTournament, points);
-                    points = 0;
+                    CalculateRankingWinners(tournamentID);
+                    UpdateStatus(GetTournament(tournamentID), "FINISHED");
+                    CalculateTournamentWinners(tournamentID);
+                    return true;
                 }
+            }
+            else if (GetTournament(tournamentID).TournamentType == "double-round-robin")
+            {
+                if (matchesCompleted == true)
+                {
+                    int points = 0;
 
-                CalculateRankingWinners(tournamentID);
-                CalculateTournamentWinners(tournamentID);
-                return true;
+                    List<EnrolledTournament> tournamentEnrollings = new List<EnrolledTournament>();
+                    tournamentEnrollings = GetEnrollingsForTournament(tournamentID);
+
+
+                    doubleGameMatchesForTournament = GetDoubleGameMatchesForTournament(tournamentID);
+
+                    foreach (EnrolledTournament enrolledTournament in tournamentEnrollings)
+                    {
+
+                        foreach (DoubleGameMatch match in doubleGameMatchesForTournament)
+                        {
+                            if (match.WinnerID == enrolledTournament.PlayerID)
+                            {
+                                points++;
+                            }
+                        }
+
+                        UpdatePoints(enrolledTournament, points);
+                        points = 0;
+                    }
+
+                    CalculateRankingWinners(tournamentID);
+                    UpdateStatus(GetTournament(tournamentID), "FINISHED");
+                    CalculateTournamentWinners(tournamentID);
+                    return true;
+                }
             }
 
-            return false;
+
+
+
+                return false;
             
         }
 

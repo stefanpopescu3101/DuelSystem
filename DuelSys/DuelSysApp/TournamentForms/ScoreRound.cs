@@ -74,5 +74,35 @@ namespace DuelSysApp.TournamentForms
             lbPlayer1.Text = match.Player1Name;
             lbPlayer2.Text = match.Player2Name;
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbPlayer2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbPlayer1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbPlayer1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbPlayer2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbRound_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

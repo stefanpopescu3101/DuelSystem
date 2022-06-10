@@ -2,3 +2,179 @@
 @model DuelSysWebsite.Pages.ProfileModel
 @{
 }
+
+<style>
+
+    .container {
+        width: 100%;
+        min-height: 80vh;
+        font-family: sans-serif;
+        /*background: rgb(187, 187, 245);*/
+        background: #FBFFFE;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    body {
+    }
+
+    *:focus {
+        outline: none;
+    }
+
+    .box {
+        box-sizing: border-box;
+        width: 153px;
+        height: 153px;
+        border: 2px solid #1B1B1E;
+        box-shadow: -3px -3px 7px #ffffff73, 3px 3px 5px rgba(94,104,121,0.288);
+        border-radius: 50%;
+        background-color: #FAA916;
+        margin-top: 50px;
+        overflow: hidden;
+        transition: all 1s;
+    }
+
+        .box:hover {
+            width: 360px;
+            height: 500px;
+            border-radius: 5px;
+        }
+
+    img {
+        box-sizing: border-box;
+        width: 149px;
+        height: 149px;
+        border-radius: 50%;
+        margin: 0;
+        border: 5px solid #1B1B1E;
+        padding: 3px;
+        background-color: white;
+        overflow: hidden;
+        transition: all 1s;
+    }
+
+    .box:hover img {
+        width: 100px;
+        height: 100px;
+        margin: 20px 35%;
+    }
+
+    hr {
+        width: 500px;
+        line-height: 20px;
+        margin: 10px 10px 10px 10px;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="number"] {
+        display: block;
+        box-sizing: border-box;
+        color: #1B1B1E;
+        margin-bottom: 30px;
+        padding: 4px;
+        width: 220px;
+        height: 32px;
+        border: none;
+        border-bottom: 1px solid #1B1B1E;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400;
+        font-size: 15px;
+        transition: 0.2s ease;
+        background: none;
+    }
+
+    input[type="text"] {
+        margin-top: 25px;
+    }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus,
+        input[type="number"]:focus {
+            border-bottom: 2px solid #1B1B1E;
+            border-bottom-right-radius: 20px;
+            color: #1b1b1e;
+            transition: 0.2s ease;
+            background: black;
+            border-top: none;
+        }
+
+
+    button {
+        border: 1px solid #1B1B1E;
+        background-color: #FAA916;
+        color: #1B1B1E;
+        height: 30px;
+        width: 100px;
+        border-radius: 5px;
+        left: 0;
+        margin: 0px;
+        transition: all .3s;
+    }
+
+        button:hover {
+            transform: scale(1.1);
+            background-color: #1B1B1E;
+            color: #FBFFFE;
+        }
+
+    input[type="file"] {
+        display: none;
+    }
+
+    label {
+        box-sizing: border-box;
+        width: 40px;
+        height: 20px;
+        background-color: black;
+        color: white;
+        border: 1px solid #3498db;
+        background-color: black;
+        color: white;
+        padding: 4px;
+        border-radius: 2px;
+    }
+
+        label:hover {
+            background-color: #566573;
+            transform: scale(1.1);
+        }
+</style>
+
+<html>
+<head>
+    <title>Eidt Profile Page</title>
+</head>
+<body>
+    <div class="container">
+        <center>
+            <div class="box">
+
+
+                <input type="file" id="file" name="image">
+                <img src="pic22.jpg" width="100%" height="100%">
+                <label for="file">EDIT PIC</label>
+
+
+                <form method="post" asp-page-handler="Update">
+                    <input type="text" asp-for="Username" placeholder="User Name" value="@User.Identity.Name" />
+                    <input type="password" asp-for="Password" placeholder="Password" value="******" />
+
+
+                    <button style="float: left;margin: 10px 0 0 18.2%;">CANCEL</button>
+
+                    <button type="submit" name="done" style="float: right;margin:10px 18.2% 0 0;">
+                        DONE
+                    </button>
+                </form>
+            </div>
+        </center>
+
+
+    </div>
+
+</body>
+</html>
