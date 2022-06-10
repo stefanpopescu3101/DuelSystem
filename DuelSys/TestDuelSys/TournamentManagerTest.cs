@@ -112,5 +112,19 @@ namespace TestDuelSys
             //assert
             Assert.AreEqual(tournamentManager.SearchTournaments(sportType).Count, 6);
         }
+
+
+        [TestMethod]
+        public void GenerateTournamentStructureTest()
+        {
+            
+
+            
+
+            
+
+
+            
+        }
     }
 }

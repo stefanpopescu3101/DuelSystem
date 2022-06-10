@@ -89,51 +89,114 @@
 
 
 
-        <table>
-            <tr>
-                <th>#</th>
-                <th>Players</th>
-                <th>Points</th>
-                <th>Rank</th>
-            </tr>
-            @for (int i = 0; i < Model.enrolledTournaments.Count; i++)
-            {
-
+        @if (Model.Tournament.TournamentType == "round-robin")
+        {
+            <table>
                 <tr>
-                    <td>@(i+1)</td>
-                    <td>@Model.playerManager.GetPlayerByID(Model.enrolledTournaments[i].PlayerID).Username</td>
-                    <td>@Model.enrolledTournaments[i].Points</td>
-                    <td>@Model.enrolledTournaments[i].Rank</td>
+                    <th>#</th>
+                    <th>Players</th>
+                    <th>Points</th>
+                    <th>Rank</th>
                 </tr>
-            }
 
-        </table>
 
-        <table>
-            <tr>
-                <th>#</th>
-                <th>Matches</th>
-                <th>Points</th>
-            </tr>
-            @for (int i = 0; i < Model.matches.Count; i++)
-            {
 
+                @for (int i = 0; i < Model.enrolledTournaments.Count; i++)
+                {
+
+                    <tr>
+                        <td>@(i+1)</td>
+                        <td>@Model.playerManager.GetPlayerByID(Model.enrolledTournaments[i].PlayerID).Username</td>
+                        <td>@Model.enrolledTournaments[i].Points</td>
+                        <td>@Model.enrolledTournaments[i].Rank</td>
+                    </tr>
+                }
+
+            </table>
+
+            <table>
                 <tr>
-                    <td>@(i+1)</td>
-                    <td>
-                        @Model.matches[i].Player1Name
-                        -
-                        @Model.matches[i].Player2Name
-                    </td>
-                    <td>
-                        @Model.matches[i].Player1Score
-                        -
-                        @Model.matches[i].Player2Score
-                    </td>
+                    <th>#</th>
+                    <th>Matches</th>
+                    <th>Points</th>
                 </tr>
-            }
+                @for (int i = 0; i < Model.matches.Count; i++)
+                {
 
-        </table>
+                    <tr>
+                        <td>@(i+1)</td>
+                        <td>
+                            @Model.matches[i].Player1Name
+                            -
+                            @Model.matches[i].Player2Name
+                        </td>
+                        <td>
+                            @Model.matches[i].Player1Score
+                            -
+                            @Model.matches[i].Player2Score
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        }
+        else
+        {
+            <table>
+                <tr>
+                    <th>#</th>
+                    <th>Players</th>
+                    <th>Points</th>
+                    <th>Rank</th>
+                </tr>
+
+
+
+                @for (int i = 0; i < Model.enrolledTournaments.Count; i++)
+                {
+
+                    <tr>
+                        <td>@(i+1)</td>
+                        <td>@Model.playerManager.GetPlayerByID(Model.enrolledTournaments[i].PlayerID).Username</td>
+                        <td>@Model.enrolledTournaments[i].Points</td>
+                        <td>@Model.enrolledTournaments[i].Rank</td>
+                    </tr>
+                }
+
+            </table>
+
+            <table>
+                <tr>
+                    <th>#</th>
+                    <th>Matches</th>
+                    <th>Points</th>
+                </tr>
+                @for (int i = 0; i < Model.doubleGameMatches.Count; i++)
+                {
+
+                    <tr>
+                        <td>@(i+1)</td>
+                        <td>
+                            @Model.doubleGameMatches[i].Player1Name
+                            -
+                            @Model.doubleGameMatches[i].Player2Name
+                        </td>
+                        <td>
+                            @Model.doubleGameMatches[i].Player1Match1Score
+                            -
+                            @Model.doubleGameMatches[i].Player2Match1Score,
+
+                            @Model.doubleGameMatches[i].Player1Match2Score
+                            -
+                            @Model.doubleGameMatches[i].Player2Match2Score
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        }
+
+
 
     </div>
 </div>

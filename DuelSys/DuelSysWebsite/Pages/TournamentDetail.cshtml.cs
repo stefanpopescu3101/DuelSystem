@@ -23,12 +23,14 @@ namespace DuelSysWebsite.Pages
         public List<Tournament> tournaments;
         public List<Round> rounds;
         public List<Match> matches;
+        public List<DoubleGameMatch> doubleGameMatches;
         public List<EnrolledTournament> enrolledTournaments;
         public void OnGet(int id)
         {
             Tournament = tournamentManager.GetTournament(id);
             enrolledTournaments = tournamentManager.GetEnrollingsForTournament(id);
             matches = tournamentManager.GetMatchesForTournament(id);
+            doubleGameMatches = tournamentManager.GetDoubleGameMatchesForTournament(id);
         }
 
         
@@ -42,6 +44,7 @@ namespace DuelSysWebsite.Pages
             tournaments = new List<Tournament>();
             rounds = new List<Round>();
             matches = new List<Match>();
+            doubleGameMatches = new List<DoubleGameMatch>();
             enrolledTournaments = new List<EnrolledTournament>();
 
         }
