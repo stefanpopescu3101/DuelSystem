@@ -7,8 +7,8 @@
       <Entity type="Class">
         <Name>Tournament</Name>
         <Access>Public</Access>
-        <Location left="1052" top="166" />
-        <Size width="289" height="332" />
+        <Location left="3421" top="2171" />
+        <Size width="289" height="383" />
         <Collapsed>False</Collapsed>
         <Member type="Field">public int id</Member>
         <Member type="Field">private string sportType</Member>
@@ -19,14 +19,21 @@
         <Member type="Field">private int maxPlayers</Member>
         <Member type="Field">private string location</Member>
         <Member type="Field">private string tournamentType</Member>
-        <Member type="Constructor">public Tournament(int id, string sportType, string description, string startDate, string endDate, int minPlayers, int maxPlayers, string location, string tournamentType)</Member>
-        <Member type="Constructor">public Tournament(string sportType, string description, string startDate, string endDate, int minPlayers, int maxPlayers, string location, string tournamentType)</Member>
+        <Member type="Field">private int bronze</Member>
+        <Member type="Field">private int silver</Member>
+        <Member type="Field">private int gold</Member>
+        <Member type="Field">private string status</Member>
+        <Member type="Constructor">public Tournament(int id, string sportType, string description, string startDate, string endDate, int minPlayers, int maxPlayers, string location, string tournamentType, int bronze, int silver, int gold, string status)</Member>
+        <Member type="Constructor">public Tournament(string sportType, string description, string startDate, string endDate, int minPlayers, int maxPlayers, string location, string tournamentType, int bronze, int silver, int gold, string status)</Member>
+        <Member type="Method">public void UpdateInfo(string sportType, string description, string startDate, string endDate, int minPlayers, int maxPlayers, string location, string status)</Member>
+        <Member type="Method">public void UpdateRanking(int bronze, int silver, int gold)</Member>
+        <Member type="Method">public void UpdateStatus(string status)</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
         <Name>Staff</Name>
         <Access>Public</Access>
-        <Location left="1703" top="166" />
+        <Location left="4072" top="2171" />
         <Size width="304" height="332" />
         <Collapsed>False</Collapsed>
         <Member type="Field">public int id</Member>
@@ -46,8 +53,8 @@
       <Entity type="Class">
         <Name>Player</Name>
         <Access>Public</Access>
-        <Location left="34" top="166" />
-        <Size width="270" height="332" />
+        <Location left="3728" top="1481" />
+        <Size width="270" height="298" />
         <Collapsed>False</Collapsed>
         <Member type="Field">public int id</Member>
         <Member type="Field">private string firstName</Member>
@@ -61,7 +68,7 @@
       <Entity type="Class">
         <Name>Match</Name>
         <Access>Public</Access>
-        <Location left="482" top="584" />
+        <Location left="2851" top="2589" />
         <Size width="278" height="332" />
         <Collapsed>False</Collapsed>
         <Member type="Field">int matchID</Member>
@@ -76,7 +83,7 @@
       <Entity type="Class">
         <Name>TournamentManager</Name>
         <Access>Public</Access>
-        <Location left="1052" top="623" />
+        <Location left="3421" top="2628" />
         <Size width="289" height="265" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private List&lt;Tournament&gt; tournaments</Member>
@@ -94,7 +101,7 @@
       <Entity type="Class">
         <Name>StaffManager</Name>
         <Access>Public</Access>
-        <Location left="1703" top="623" />
+        <Location left="4072" top="2628" />
         <Size width="304" height="265" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private List&lt;Staff&gt; staffs</Member>
@@ -113,7 +120,7 @@
       <Entity type="Class">
         <Name>TournamentMediator</Name>
         <Access>Public</Access>
-        <Location left="894" top="1248" />
+        <Location left="3263" top="3253" />
         <Size width="240" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private DataAccess dataAccess</Member>
@@ -127,7 +134,7 @@
       <Entity type="Class">
         <Name>StaffMediator</Name>
         <Access>Public</Access>
-        <Location left="1939" top="1248" />
+        <Location left="4308" top="3253" />
         <Size width="240" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private DataAccess dataAccess</Member>
@@ -141,7 +148,7 @@
       <Entity type="Interface">
         <Name>IStaffData</Name>
         <Access>Public</Access>
-        <Location left="1703" top="976" />
+        <Location left="4072" top="2981" />
         <Size width="304" height="157" />
         <Collapsed>False</Collapsed>
         <Member type="Method">bool AddStaff(Staff staff)</Member>
@@ -152,7 +159,7 @@
       <Entity type="Interface">
         <Name>ITournamentData</Name>
         <Access>Public</Access>
-        <Location left="1052" top="976" />
+        <Location left="3421" top="2981" />
         <Size width="289" height="157" />
         <Collapsed>False</Collapsed>
         <Member type="Method">bool AddTournament(Tournament tournament)</Member>
@@ -163,7 +170,7 @@
       <Entity type="Class">
         <Name>FakeStaffData</Name>
         <Access>Public</Access>
-        <Location left="1551" top="1248" />
+        <Location left="3920" top="3253" />
         <Size width="240" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Field">List&lt;Staff&gt; staffs</Member>
@@ -177,7 +184,7 @@
       <Entity type="Class">
         <Name>FakeTournamentData</Name>
         <Access>Public</Access>
-        <Location left="1256" top="1248" />
+        <Location left="3625" top="3253" />
         <Size width="240" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Field">List&lt;Tournament&gt; tournaments</Member>
@@ -190,7 +197,7 @@
       <Entity type="Class">
         <Name>DataAccess</Name>
         <Access>Public</Access>
-        <Location left="1353" top="1592" />
+        <Location left="3722" top="3597" />
         <Size width="318" height="247" />
         <Collapsed>False</Collapsed>
         <Member type="Field">protected MySqlConnection connection</Member>
@@ -208,13 +215,170 @@
       <Entity type="Class">
         <Name>Round</Name>
         <Access>Public</Access>
-        <Location left="482" top="166" />
+        <Location left="2851" top="2171" />
         <Size width="278" height="332" />
         <Collapsed>False</Collapsed>
         <Member type="Field">int roundID</Member>
         <Member type="Field">int tournamentID</Member>
         <Member type="Field">bool status</Member>
         <Member type="Constructor">public Round()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>RoundManager</Name>
+        <Access>Public</Access>
+        <Location left="2851" top="1771" />
+        <Size width="278" height="278" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private List&lt;Round&gt; rounds</Member>
+        <Member type="Field">private IRoundData roundMediator</Member>
+        <Member type="Constructor">public RoundManager(IRoundData src)</Member>
+        <Member type="Method">public bool AddRound(Round round)</Member>
+        <Member type="Method">public List&lt;Round&gt; GetRounds()</Member>
+        <Member type="Method">public List&lt;Round&gt; GetRoundsForTournament(int id)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PlayerManager</Name>
+        <Access>Public</Access>
+        <Location left="3479" top="1129" />
+        <Size width="270" height="295" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private List&lt;Player&gt; players</Member>
+        <Member type="Field">private IPlayerData playerMediator</Member>
+        <Member type="Constructor">public PlayerManager(IPlayerData src)</Member>
+        <Member type="Method">public bool AddPlayer(Player player)</Member>
+        <Member type="Method">public Player CheckCredentials(string username, string password)</Member>
+        <Member type="Method">public Player GetPlayer(string username)</Member>
+        <Member type="Method">public Player GetPlayerByID(int id)</Member>
+        <Member type="Method">public List&lt;Player&gt; GetAllPlayers()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>RoundMediator</Name>
+        <Access>Public</Access>
+        <Location left="2627" top="1150" />
+        <Size width="238" height="265" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private DataAccess dataAccess</Member>
+        <Member type="Constructor">public RoundMediator()</Member>
+        <Member type="Method">public bool AddRound(Round round)</Member>
+        <Member type="Method">public List&lt;Round&gt; GetRounds()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Interface">
+        <Name>IRoundData</Name>
+        <Access>Public</Access>
+        <Location left="2865" top="1503" />
+        <Size width="251" height="175" />
+        <Collapsed>False</Collapsed>
+      </Entity>
+      <Entity type="Class">
+        <Name>FakeRoundData</Name>
+        <Access>Public</Access>
+        <Location left="3109" top="1150" />
+        <Size width="224" height="265" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MatchManager</Name>
+        <Access>Public</Access>
+        <Location left="2421" top="2641" />
+        <Size width="224" height="236" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private IMatchData matchMediator</Member>
+        <Member type="Field">private List&lt;Match&gt; matches</Member>
+        <Member type="Constructor">public MatchManager(IMatchData src)</Member>
+        <Member type="Method">public List&lt;Match&gt; GetMatches()</Member>
+        <Member type="Method">public bool AddMatch(Match match)</Member>
+        <Member type="Method">public void UpdateInfo(Match match, int player1Score, int player2Score, int winner)</Member>
+        <Member type="Method">public Match GetMatch(int id)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MatchMediator</Name>
+        <Access>Public</Access>
+        <Location left="1648" top="2493" />
+        <Size width="224" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private DataAccess dataAccess</Member>
+        <Member type="Constructor">public MatchMediator()</Member>
+        <Member type="Method">public List&lt;Match&gt; GetMatches()</Member>
+        <Member type="Method">public bool AddMatch(Match match)</Member>
+        <Member type="Method">public bool UpdateInfo(Match match)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Interface">
+        <Name>IMatchData</Name>
+        <Access>Public</Access>
+        <Location left="1989" top="2641" />
+        <Size width="260" height="236" />
+        <Collapsed>False</Collapsed>
+      </Entity>
+      <Entity type="Class">
+        <Name>FakeMatchData</Name>
+        <Access>Public</Access>
+        <Location left="1648" top="2821" />
+        <Size width="224" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PlayerMediator</Name>
+        <Access>Public</Access>
+        <Location left="3223" top="378" />
+        <Size width="270" height="298" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public PlayerMediator()</Member>
+        <Member type="Method">public bool AddPlayer(Player player)</Member>
+        <Member type="Method">public List&lt;Player&gt; GetPlayers()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>FakePlayerData</Name>
+        <Access>Public</Access>
+        <Location left="3721" top="378" />
+        <Size width="270" height="298" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Interface">
+        <Name>IPlayerData</Name>
+        <Access>Public</Access>
+        <Location left="3479" top="810" />
+        <Size width="269" height="216" />
+        <Collapsed>False</Collapsed>
+      </Entity>
+      <Entity type="Class">
+        <Name>EnrolledTournament</Name>
+        <Access>Public</Access>
+        <Location left="3762" top="2171" />
+        <Size width="270" height="383" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private int tournamentID</Member>
+        <Member type="Field">private int playerID</Member>
+        <Member type="Field">private int rank</Member>
+        <Member type="Field">private int points</Member>
+        <Member type="Constructor">public EnrolledTournament(int tournamentID, int playerID, int points, int rank)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DataAccess</Name>
+        <Access>Public</Access>
+        <Location left="1344" top="1493" />
+        <Size width="318" height="247" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">protected MySqlConnection connection</Member>
+        <Member type="Field">protected MySqlCommand command</Member>
+        <Member type="Field">protected MySqlDataReader dataReader</Member>
+        <Member type="Field">protected string query = ""</Member>
+        <Member type="Constructor">public DataAccess()</Member>
+        <Member type="Method">public void AddWithValue(string parameterName, object value)</Member>
+        <Member type="Method">public void NonQueryEx()</Member>
+        <Member type="Method">public void Close()</Member>
+        <Member type="Method">public bool ConnOpen()</Member>
+        <Member type="Method">public void SqlQuery(string queryText)</Member>
         <Modifier>None</Modifier>
       </Entity>
     </Entities>
@@ -236,16 +400,12 @@
         <EndMultiplicity>0..*</EndMultiplicity>
       </Relationship>
       <Relationship type="Association" first="4" second="9">
-        <Label>
-        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
       <Relationship type="Association" first="5" second="8">
-        <Label>
-        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <Direction>Unidirectional</Direction>
@@ -275,17 +435,116 @@
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
       </Relationship>
-      <Relationship type="Association" first="13" second="3">
+      <Relationship type="Association" first="3" second="13">
+        <Label>-matches</Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
-      <Relationship type="Association" first="0" second="13">
+      <Relationship type="Association" first="13" second="0">
+        <Label>-rounds</Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Realization" first="16" second="17">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="18" second="17">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Association" first="14" second="17">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="14" second="13">
+        <Label>-rounds</Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="19" second="3">
+        <Label>-matches</Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Realization" first="20" second="21">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="22" second="21">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Association" first="19" second="21">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="15" second="2">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="15" second="25">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Realization" first="24" second="25">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="23" second="25">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Association" first="26" second="4">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="2" second="0">
+        <Label>-players</Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Generalization" first="20" second="27">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="16" second="27">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="23" second="27">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
       </Relationship>
     </Relationships>
   </ProjectItem>
