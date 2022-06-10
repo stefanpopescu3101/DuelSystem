@@ -5,11 +5,13 @@ using System.Threading.Tasks;
 using DuelSysEntities;
 using DuelSysManagers;
 using DuelSysMediators;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace DuelSysWebsite.Pages
 {
+    [Authorize]
     public class TournamentDetailModel : PageModel
     {
 
