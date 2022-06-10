@@ -1,0 +1,139 @@
+﻿@page
+@model DuelSysWebsite.Pages.TournamentDetailModel
+@{
+}
+
+<style>
+    .container {
+        min-height: 80vh;
+        /*height: 100%;*/
+        width: 90%;
+        background: #fbfffe;
+        margin: auto;
+    }
+
+    .card {
+        width: 100%;
+        padding: 10px;
+        border: 2px solid #1B1B1E;
+        transition: all .3s;
+        margin: 10px;
+    }
+
+        .card:hover {
+            transform: scale(1.1);
+        }
+
+
+        .card > .button {
+            text-align: right;
+        }
+
+    button {
+        /*width: 100%;*/
+        background: transparent;
+        border: 1px solid #1B1B1E;
+        margin: 35px 0 10px;
+        height: 32px;
+        font-size: 12px;
+        border-radius: 20px;
+        padding: 0 10px;
+        box-sizing: border-box;
+        outline: none;
+        color: #1b1b1e;
+        cursor: pointer;
+    }
+
+        button:hover {
+            background: #1b1b1e;
+            color: #fbfffe;
+        }
+
+    .member-complaint-buttons {
+        /*width:100%;*/
+        padding: 10px;
+        /*margin-left:60px;*/
+    }
+
+    .button-arrangement {
+        text-align: right;
+    }
+
+
+
+    .moreSpan {
+        display: none;
+    }
+
+    table, td, th {
+        border: 1px solid #ddd;
+        text-align: left;
+    }
+
+
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+
+
+    th, td {
+        padding: 15px;
+    }
+</style>
+
+<div class="container">
+    <div class="card">
+
+
+
+        <table>
+            <tr>
+                <th>#</th>
+                <th>Players</th>
+                <th>Points</th>
+                <th>Rank</th>
+            </tr>
+            @for (int i = 0; i < Model.enrolledTournaments.Count; i++)
+            {
+
+                <tr>
+                    <td>@(i+1)</td>
+                    <td>@Model.playerManager.GetPlayerByID(Model.enrolledTournaments[i].PlayerID).Username</td>
+                    <td>@Model.enrolledTournaments[i].Points</td>
+                    <td>@Model.enrolledTournaments[i].Rank</td>
+                </tr>
+            }
+
+        </table>
+
+        <table>
+            <tr>
+                <th>#</th>
+                <th>Matches</th>
+                <th>Points</th>
+            </tr>
+            @for (int i = 0; i < Model.matches.Count; i++)
+            {
+
+                <tr>
+                    <td>@(i+1)</td>
+                    <td>
+                        @Model.matches[i].Player1Name
+                        -
+                        @Model.matches[i].Player2Name
+                    </td>
+                    <td>
+                        @Model.matches[i].Player1Score
+                        -
+                        @Model.matches[i].Player2Score
+                    </td>
+                </tr>
+            }
+
+        </table>
+
+    </div>
+</div>

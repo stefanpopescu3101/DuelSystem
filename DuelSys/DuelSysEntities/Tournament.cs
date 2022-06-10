@@ -131,6 +131,11 @@ namespace DuelSysEntities
             this.status = status;
         }
 
+        public Tournament()
+        {
+
+        }
+
         public void UpdateInfo(string sportType, string description, string startDate, string endDate, int minPlayers, int maxPlayers, string location, string status)
         {
             this.sportType = sportType;

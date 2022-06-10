@@ -58,3 +58,6 @@ C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\D
 C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysWebsite\obj\Debug\netcoreapp3.1\Razor\Pages\Tournaments.cshtml.g.cs
 C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysWebsite\obj\Debug\netcoreapp3.1\Razor\Pages\Profile.cshtml.g.cs
 C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysWebsite\obj\Debug\netcoreapp3.1\Razor\Pages\LogOut.cshtml.g.cs
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysWebsite\obj\Debug\netcoreapp3.1\Razor\Pages\TournamentDetail.cshtml.g.cs
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysWebsite\obj\Debug\netcoreapp3.1\Razor\Pages\TournamentsPast.cshtml.g.cs
+C:\Users\Stefan\Desktop\STUDY\Synthesis_New\synthesys2nd_stefanpopescu\DuelSys\DuelSysWebsite\obj\Debug\netcoreapp3.1\Razor\Pages\MyTournaments.cshtml.g.cs

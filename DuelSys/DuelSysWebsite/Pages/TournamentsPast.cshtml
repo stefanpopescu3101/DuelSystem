@@ -1,0 +1,152 @@
+﻿@page
+@model DuelSysWebsite.Pages.TournamentsPastModel
+@{
+}
+
+<style>
+    .container {
+        min-height: 80vh;
+        /*height: 100%;*/
+        width: 90%;
+        background: #fbfffe;
+        margin: auto;
+    }
+
+    .card {
+        width: 100%;
+        padding: 10px;
+        border: 2px solid #1B1B1E;
+        transition: all .3s;
+        margin: 10px;
+    }
+
+        .card:hover {
+            transform: scale(1.1);
+        }
+
+
+        .card > .button {
+            text-align: right;
+        }
+
+    button {
+        /*width: 100%;*/
+        background: transparent;
+        border: 1px solid #1B1B1E;
+        margin: 35px 0 10px;
+        height: 32px;
+        font-size: 12px;
+        border-radius: 20px;
+        padding: 0 10px;
+        box-sizing: border-box;
+        outline: none;
+        color: #1b1b1e;
+        cursor: pointer;
+    }
+
+        button:hover {
+            background: #1b1b1e;
+            color: #fbfffe;
+        }
+
+    .member-complaint-buttons {
+        /*width:100%;*/
+        padding: 10px;
+        /*margin-left:60px;*/
+    }
+
+    .button-arrangement {
+        text-align: right;
+    }
+
+
+
+    .moreSpan {
+        display: none;
+    }
+</style>
+
+
+<div class="container">
+
+    @foreach (var item in Model.tournaments)
+    {
+        <div class="card">
+
+            <h2>@Html.DisplayTextFor(m => item.SportType) #@Html.DisplayTextFor(m => item.ID)</h2>
+
+            <h3>
+                <p>
+                    Tournament Type: @Html.DisplayTextFor(m => item.TournamentType)
+                </p>
+
+                <br />
+                <p>
+                    Location: @Html.DisplayTextFor(m => item.Location)
+                </p>
+                <br />
+                <p>
+                    Start Date: @Html.DisplayTextFor(m => item.StartDate)
+                </p>
+                <br />
+                <p>
+                    End Date: @Html.DisplayTextFor(m => item.EndDate)
+                </p>
+                <br />
+                <p>
+                    Min Players: @Html.DisplayTextFor(m => item.MinPlayers)
+                </p>
+                <br />
+                <p>
+                    Max Players: @Html.DisplayTextFor(m => item.MaxPlayers)
+                </p>
+
+                <br />
+                <br />
+                <br />
+
+                <p>
+                    Description:
+                </p>
+                <br />
+                <p>
+                    @Html.DisplayTextFor(m => item.Description)
+                </p>
+                <br />
+                <br />
+
+
+                <form method="post" asp-route-id="@item.ID">
+                    <a class="member-complaint-buttons" type="submit" asp-route-id="@item.ID" asp-page="/TournamentDetail">View Details</a>
+                </form>
+
+
+            </h3>
+
+
+            @*<div class="member-complaint-buttons">
+                    <button>Delete</button>
+                    <button>Edit</button>
+                </div>*@
+
+
+            @*<p>
+                    <span id="dots"></span>
+                    <span class="moreSpan" id="more">
+
+                        Price : @Html.DisplayTextFor(m => item.Price)$
+
+                    </span>
+                </p>*@
+
+
+            @*<p class="button-arrangement">
+                    <button class="member-complaint-buttons btnReadMore btn1 myBtn" onclick="myFunctionComplaint()" id="myBtn">View Details</button>
+
+
+                </p>*@
+
+        </div>
+    }
+
+</div>

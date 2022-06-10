@@ -88,6 +88,46 @@ namespace DuelSysManagers
             return tournaments;
         }
 
+        public List<Tournament> GetFinishedTournaments()
+        {
+            List<Tournament> finishedTournaments = new List<Tournament>();
+
+            tournaments = GetTournaments();
+            foreach(Tournament tournament in tournaments)
+            {
+                if(tournament.Status=="FINISHED")
+                {
+                    finishedTournaments.Add(tournament);
+                }
+            }
+
+            return finishedTournaments;
+        }
+
+        public List<Tournament> GetTournamentsForPlayer(int playerID)
+        {
+            tournaments = GetFinishedTournaments();
+
+            List<Tournament> playerTournaments = new List<Tournament>();
+
+            List<EnrolledTournament> playerEnrollments = new List<EnrolledTournament>();
+
+            foreach(Tournament tournament in tournaments)
+            {
+                playerEnrollments = GetEnrollingsForTournament(tournament.ID);
+
+                foreach(EnrolledTournament enrolledTournament in playerEnrollments)
+                {
+                    if(enrolledTournament.PlayerID==playerID)
+                    {
+                        playerTournaments.Add(tournament);
+                    }
+                }
+            }
+
+            return playerTournaments;
+        }
+
         public Tournament GetTournament(int id)
         {
             foreach (Tournament tournament in GetTournaments())
