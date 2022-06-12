@@ -304,8 +304,8 @@ namespace DuelSysMediators
 
                     SqlQuery(query);
 
-                    AddWithValue("@TournamentID", tournament.PlayerID);
-                    AddWithValue("@PlayerID", tournament.TournamentID);
+                    AddWithValue("@TournamentID", tournament.TournamentID);
+                    AddWithValue("@PlayerID", tournament.PlayerID);
                     AddWithValue("@Points", tournament.Points);
                     AddWithValue("@Rank", tournament.Rank);
 

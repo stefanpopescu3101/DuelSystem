@@ -156,7 +156,10 @@ namespace DuelSysManagers
             {
                 enrolledTournaments.Add(enrolledTournament);
                 mediator.AddEnrollment(enrolledTournament);
-                if (GetEnrollingsForTournament(enrolledTournament.TournamentID).Count == GetTournament(enrolledTournament.TournamentID).MaxPlayers)
+                Tournament tournament = GetTournament(enrolledTournament.TournamentID);
+                List<EnrolledTournament> enrollingsForThisTournament= new List<EnrolledTournament>();
+                enrollingsForThisTournament = GetEnrollingsForTournament(enrolledTournament.TournamentID);
+                if (enrollingsForThisTournament.Count == tournament.MaxPlayers)
                 {
                     UpdateStatus(GetTournament(enrolledTournament.TournamentID), "LOCKED");
                 }

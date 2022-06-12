@@ -40,7 +40,7 @@ namespace DuelSysWebsite.Pages
         {
 
 
-            EnrolledTournament enrollment = new EnrolledTournament(playerManager.GetPlayer(User.Identity.Name).Id, id, 0, 0);
+            EnrolledTournament enrollment = new EnrolledTournament(id, playerManager.GetPlayer(User.Identity.Name).Id, 0, 0);
 
             if(tournamentManager.AddEnrollment(enrollment))
             {

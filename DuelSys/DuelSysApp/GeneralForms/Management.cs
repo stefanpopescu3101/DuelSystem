@@ -165,7 +165,7 @@ namespace DuelSysApp.GeneralForms
             {
                 int id = Convert.ToInt32(dtgvTournament.SelectedRows[0].Cells[0].Value);
 
-                if(tournamentManager.GetTournament(id).TournamentType=="robin-round")
+                if(tournamentManager.GetTournament(id).TournamentType=="round-robin")
                 {
                     fmScoreTournament a = new fmScoreTournament(tournamentManager.GetTournament(id));
                     a.Show();
